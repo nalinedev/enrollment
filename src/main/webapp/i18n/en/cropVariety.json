@@ -1,0 +1,32 @@
+{
+  "coopfullApp": {
+    "cropVariety": {
+      "home": {
+        "title": "Crop Varieties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Crop Variety",
+        "createOrEditLabel": "Create or edit a Crop Variety",
+        "notFound": "No Crop Varieties found"
+      },
+      "created": "A new Crop Variety is created with identifier {{ param }}",
+      "updated": "A Crop Variety is updated with identifier {{ param }}",
+      "deleted": "A Crop Variety is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Crop Variety {{ id }}?"
+      },
+      "detail": {
+        "title": "Crop Variety"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "origin": "Origin",
+      "maturityDays": "Maturity Days",
+      "yieldPotential": "Yield Potential",
+      "diseaseResistance": "Disease Resistance",
+      "active": "Active",
+      "crop": "Crop"
+    }
+  }
+}

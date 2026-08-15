@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AquacultureProduction.
+    -->
+    <changeSet id="20260815175956-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="aquaculture_activity_id"
+                                 baseTableName="aquaculture_production"
+                                 constraintName="fk_aquaculture_production__aquaculture_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aquaculture_activity"
+                                 />
+    </changeSet>
+</databaseChangeLog>

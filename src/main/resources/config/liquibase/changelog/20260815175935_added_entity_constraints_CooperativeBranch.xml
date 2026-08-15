@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity CooperativeBranch.
+    -->
+    <changeSet id="20260815175935-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cooperative_id"
+                                 baseTableName="cooperative_branch"
+                                 constraintName="fk_cooperative_branch__cooperative_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cooperative"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="cooperative_branch"
+                                 constraintName="fk_cooperative_branch__location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"
+                                 />
+    </changeSet>
+</databaseChangeLog>

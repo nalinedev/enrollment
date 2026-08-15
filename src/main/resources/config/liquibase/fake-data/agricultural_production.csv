@@ -1,0 +1,11 @@
+id;area;area_unit;planting_date;harvest_start_date;harvest_end_date;production_quantity;production_unit;expected_annual_production;number_of_plants;planting_density;production_year;status;notes
+1;10046.4;apud ha;2026-08-14;2026-08-15;2026-08-15;22957.66;juggernaut until;910.01;31115;16716.49;18547;PLANNED;../fake-data/blob/hipster.txt
+2;5088.42;assured;2026-08-15;2026-08-14;2026-08-14;16649.9;frantically earth;25326.36;14760;10356.49;9751;HARVESTED;../fake-data/blob/hipster.txt
+3;18012.89;nimble atop hm;2026-08-14;2026-08-15;2026-08-15;18101.73;anti;13836.88;16881;9439.57;12282;COMPLETED;../fake-data/blob/hipster.txt
+4;20189.78;huff;2026-08-15;2026-08-15;2026-08-14;25838.04;over;14954.23;9837;4597.91;30645;PLANNED;../fake-data/blob/hipster.txt
+5;28778.59;dazzling geez quickly;2026-08-15;2026-08-15;2026-08-14;22576.76;given;30157.49;2138;4931.72;20337;ACTIVE;../fake-data/blob/hipster.txt
+6;30787.54;useless;2026-08-15;2026-08-15;2026-08-15;9859.35;fond repeatedly;21789.43;22429;22871.58;17941;ACTIVE;../fake-data/blob/hipster.txt
+7;5341.73;upon yum;2026-08-15;2026-08-15;2026-08-15;31192.73;considering fooey;17923.37;15746;5187.9;12372;HARVESTED;../fake-data/blob/hipster.txt
+8;18300.9;geez misspend which;2026-08-14;2026-08-15;2026-08-15;10311.87;grounded;25251.24;8219;5401.86;24437;HARVESTED;../fake-data/blob/hipster.txt
+9;25422.93;unkempt whereas;2026-08-15;2026-08-15;2026-08-15;6061.39;toe coal the;6841.49;24587;13294.51;11585;HARVESTED;../fake-data/blob/hipster.txt
+10;5065.4;given furthermore tender;2026-08-15;2026-08-15;2026-08-15;28680.15;mature;19768.51;32398;14494.61;16214;PLANNED;../fake-data/blob/hipster.txt

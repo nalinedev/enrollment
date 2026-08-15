@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Member.
+    -->
+    <changeSet id="20260815175936-1" author="jhipster">
+        <createTable tableName="member">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="member_number" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_member__member_number" />
+            </column>
+            <column name="member_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="admission_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="exit_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="exit_reason" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="notes" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_modified_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="individual_member_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_member__individual_member_id" />
+            </column>
+            <column name="organization_member_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_member__organization_member_id" />
+            </column>
+            <column name="social_profile_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_member__social_profile_id" />
+            </column>
+            <column name="professional_profile_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_member__professional_profile_id" />
+            </column>
+            <column name="cooperative_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="branch_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="member" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="member" columnName="last_modified_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20260815175936-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="../fake-data/member.csv"
+                  relativeToChangelogFile="true"
+                  separator=";"
+                  tableName="member"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="member_number" type="string"/>
+            <column name="member_type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="admission_date" type="date"/>
+            <column name="exit_date" type="date"/>
+            <column name="exit_reason" type="string"/>
+            <column name="notes" type="clob"/>
+            <column name="created_date" type="date"/>
+            <column name="last_modified_date" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

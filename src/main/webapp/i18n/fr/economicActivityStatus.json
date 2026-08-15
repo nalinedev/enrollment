@@ -1,0 +1,11 @@
+{
+  "coopfullApp": {
+    "EconomicActivityStatus": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE",
+      "SUSPENDED": "SUSPENDED",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

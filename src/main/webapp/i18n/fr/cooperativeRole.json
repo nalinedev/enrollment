@@ -1,0 +1,28 @@
+{
+  "coopfullApp": {
+    "cooperativeRole": {
+      "home": {
+        "title": "CooperativeRoles",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Cooperative Role",
+        "createOrEditLabel": "Créer ou éditer un Cooperative Role",
+        "notFound": "Aucun Cooperative Role trouvé"
+      },
+      "created": "Un nouveau Cooperative Role a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cooperative Role avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cooperative Role avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Cooperative Role {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cooperative Role"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+export enum AquacultureSystemType {
+  POND = 'POND',
+
+  TANK = 'TANK',
+
+  CAGE = 'CAGE',
+
+  RACEWAY = 'RACEWAY',
+
+  RECIRCULATING = 'RECIRCULATING',
+
+  EARTHEN_POND = 'EARTHEN_POND',
+
+  CONCRETE_POND = 'CONCRETE_POND',
+
+  OTHER = 'OTHER',
+}

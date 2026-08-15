@@ -1,0 +1,10 @@
+{
+  "coopfullApp": {
+    "DocumentVerificationStatus": {
+      "null": "",
+      "PENDING": "PENDING",
+      "VERIFIED": "VERIFIED",
+      "REJECTED": "REJECTED"
+    }
+  }
+}

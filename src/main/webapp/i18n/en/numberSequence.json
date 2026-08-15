@@ -1,0 +1,29 @@
+{
+  "coopfullApp": {
+    "numberSequence": {
+      "home": {
+        "title": "Number Sequences",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Number Sequence",
+        "createOrEditLabel": "Create or edit a Number Sequence",
+        "notFound": "No Number Sequences found"
+      },
+      "created": "A new Number Sequence is created with identifier {{ param }}",
+      "updated": "A Number Sequence is updated with identifier {{ param }}",
+      "deleted": "A Number Sequence is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Number Sequence {{ id }}?"
+      },
+      "detail": {
+        "title": "Number Sequence"
+      },
+      "id": "ID",
+      "sequenceType": "Sequence Type",
+      "prefix": "Prefix",
+      "year": "Year",
+      "currentValue": "Current Value",
+      "padding": "Padding",
+      "cooperative": "Cooperative"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity EconomicActivity.
+    -->
+    <changeSet id="20260815175946-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="agricultural_activity_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__agricultural_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agricultural_activity"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="livestock_activity_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__livestock_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="livestock_activity"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="aquaculture_activity_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__aquaculture_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aquaculture_activity"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="activity_type_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__activity_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="economic_activity_type"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="economic_activity"
+                                 constraintName="fk_economic_activity__location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+id;name;description;main_activity;start_date;end_date;annual_revenue;monthly_revenue;number_of_employees;status;notes
+1;stoop;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-15;12590.38;6487.4;9597;SUSPENDED;../fake-data/blob/hipster.txt
+2;tusk;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-15;28614.37;5939.44;27122;CLOSED;../fake-data/blob/hipster.txt
+3;refine hepatitis;../fake-data/blob/hipster.txt;true;2026-08-15;2026-08-14;1730.6;8789.31;10458;INACTIVE;../fake-data/blob/hipster.txt
+4;tedious sonar owlishly;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-14;2936.58;28338.38;29824;SUSPENDED;../fake-data/blob/hipster.txt
+5;instance;../fake-data/blob/hipster.txt;true;2026-08-15;2026-08-15;29638.4;14460.72;13379;INACTIVE;../fake-data/blob/hipster.txt
+6;reopen;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-15;23303;26897.1;24207;SUSPENDED;../fake-data/blob/hipster.txt
+7;how inside offset;../fake-data/blob/hipster.txt;true;2026-08-14;2026-08-14;19538.47;10690.22;4409;INACTIVE;../fake-data/blob/hipster.txt
+8;pfft er;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-15;31612.16;22470.88;3542;ACTIVE;../fake-data/blob/hipster.txt
+9;inwardly;../fake-data/blob/hipster.txt;false;2026-08-15;2026-08-15;27381.45;14485.06;1251;SUSPENDED;../fake-data/blob/hipster.txt
+10;wealthy;../fake-data/blob/hipster.txt;false;2026-08-14;2026-08-15;26172.79;13841.51;15960;INACTIVE;../fake-data/blob/hipster.txt

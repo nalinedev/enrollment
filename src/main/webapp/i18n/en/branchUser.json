@@ -1,0 +1,29 @@
+{
+  "coopfullApp": {
+    "branchUser": {
+      "home": {
+        "title": "Branch Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Branch User",
+        "createOrEditLabel": "Create or edit a Branch User",
+        "notFound": "No Branch Users found"
+      },
+      "created": "A new Branch User is created with identifier {{ param }}",
+      "updated": "A Branch User is updated with identifier {{ param }}",
+      "deleted": "A Branch User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Branch User {{ id }}?"
+      },
+      "detail": {
+        "title": "Branch User"
+      },
+      "id": "ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active",
+      "appUser": "App User",
+      "branch": "Branch",
+      "role": "Role"
+    }
+  }
+}

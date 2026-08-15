@@ -1,0 +1,36 @@
+{
+  "coopfullApp": {
+    "familyMember": {
+      "home": {
+        "title": "FamilyMembers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Family Member",
+        "createOrEditLabel": "Créer ou éditer un Family Member",
+        "notFound": "Aucun Family Member trouvé"
+      },
+      "created": "Un nouveau Family Member a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Family Member avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Family Member avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Family Member {{ id }} ?"
+      },
+      "detail": {
+        "title": "Family Member"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "relationship": "Relationship",
+      "gender": "Gender",
+      "birthDate": "Birth Date",
+      "birthPlace": "Birth Place",
+      "nationality": "Nationality",
+      "phoneNumber": "Phone Number",
+      "occupation": "Occupation",
+      "dependent": "Dependent",
+      "notes": "Notes",
+      "member": "Member"
+    }
+  }
+}

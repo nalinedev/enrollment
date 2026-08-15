@@ -1,0 +1,45 @@
+{
+  "coopfullApp": {
+    "livestockActivity": {
+      "home": {
+        "title": "Livestock Activities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Livestock Activity",
+        "createOrEditLabel": "Create or edit a Livestock Activity",
+        "notFound": "No Livestock Activities found"
+      },
+      "created": "A new Livestock Activity is created with identifier {{ param }}",
+      "updated": "A Livestock Activity is updated with identifier {{ param }}",
+      "deleted": "A Livestock Activity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Livestock Activity {{ id }}?"
+      },
+      "detail": {
+        "title": "Livestock Activity"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "productionMode": "Production Mode",
+      "ownershipType": "Ownership Type",
+      "productionType": "Production Type",
+      "startDate": "Start Date",
+      "totalArea": "Total Area",
+      "areaUnit": "Area Unit",
+      "status": "Status",
+      "numberOfAnimals": "Number Of Animals",
+      "annualRevenue": "Annual Revenue",
+      "monthlyRevenue": "Monthly Revenue",
+      "employees": "Employees",
+      "veterinaryServiceAvailable": "Veterinary Service Available",
+      "feedSource": "Feed Source",
+      "waterSource": "Water Source",
+      "certification": "Certification",
+      "notes": "Notes",
+      "location": "Location",
+      "livestockType": "Livestock Type",
+      "economicActivity": "Economic Activity",
+      "productions": "Productions"
+    }
+  }
+}

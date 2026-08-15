@@ -1,0 +1,33 @@
+{
+  "coopfullApp": {
+    "cooperativeBranch": {
+      "home": {
+        "title": "Cooperative Branches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cooperative Branch",
+        "createOrEditLabel": "Create or edit a Cooperative Branch",
+        "notFound": "No Cooperative Branches found"
+      },
+      "created": "A new Cooperative Branch is created with identifier {{ param }}",
+      "updated": "A Cooperative Branch is updated with identifier {{ param }}",
+      "deleted": "A Cooperative Branch is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cooperative Branch {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperative Branch"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "phone": "Phone",
+      "email": "Email",
+      "status": "Status",
+      "openingDate": "Opening Date",
+      "closingDate": "Closing Date",
+      "cooperative": "Cooperative",
+      "location": "Location"
+    }
+  }
+}

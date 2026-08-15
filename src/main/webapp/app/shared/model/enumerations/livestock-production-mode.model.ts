@@ -1,0 +1,13 @@
+export enum LivestockProductionMode {
+  FAMILY = 'FAMILY',
+
+  INDIVIDUAL = 'INDIVIDUAL',
+
+  COMMERCIAL = 'COMMERCIAL',
+
+  COOPERATIVE = 'COOPERATIVE',
+
+  CONTRACTUAL = 'CONTRACTUAL',
+
+  OTHER = 'OTHER',
+}

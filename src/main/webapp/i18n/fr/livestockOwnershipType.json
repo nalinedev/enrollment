@@ -1,0 +1,12 @@
+{
+  "coopfullApp": {
+    "LivestockOwnershipType": {
+      "null": "",
+      "OWNER": "OWNER",
+      "LEASED": "LEASED",
+      "SHARED": "SHARED",
+      "COMMUNITY": "COMMUNITY",
+      "OTHER": "OTHER"
+    }
+  }
+}

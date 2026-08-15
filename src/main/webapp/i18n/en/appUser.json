@@ -1,0 +1,33 @@
+{
+  "coopfullApp": {
+    "appUser": {
+      "home": {
+        "title": "App Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new App User",
+        "createOrEditLabel": "Create or edit a App User",
+        "notFound": "No App Users found"
+      },
+      "created": "A new App User is created with identifier {{ param }}",
+      "updated": "A App User is updated with identifier {{ param }}",
+      "deleted": "A App User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App User {{ id }}?"
+      },
+      "detail": {
+        "title": "App User"
+      },
+      "id": "ID",
+      "employeeNumber": "Employee Number",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phoneNumber": "Phone Number",
+      "jobTitle": "Job Title",
+      "department": "Department",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User"
+    }
+  }
+}

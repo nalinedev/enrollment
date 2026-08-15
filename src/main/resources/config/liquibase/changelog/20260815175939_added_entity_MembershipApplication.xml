@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity MembershipApplication.
+    -->
+    <changeSet id="20260815175939-1" author="jhipster">
+        <createTable tableName="membership_application">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="application_number" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_membership_application__application_number" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="application_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="submitted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="reviewed_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="approved_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="rejected_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="rejection_reason" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="review_comments" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="confirmation" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="notes" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="member_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="cooperative_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="branch_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="membership_application" columnName="submitted_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="membership_application" columnName="reviewed_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="membership_application" columnName="approved_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="membership_application" columnName="rejected_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20260815175939-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="../fake-data/membership_application.csv"
+                  relativeToChangelogFile="true"
+                  separator=";"
+                  tableName="membership_application"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="application_number" type="string"/>
+            <column name="status" type="string"/>
+            <column name="application_date" type="date"/>
+            <column name="submitted_at" type="date"/>
+            <column name="reviewed_at" type="date"/>
+            <column name="approved_at" type="date"/>
+            <column name="rejected_at" type="date"/>
+            <column name="rejection_reason" type="clob"/>
+            <column name="review_comments" type="clob"/>
+            <column name="confirmation" type="boolean"/>
+            <column name="notes" type="clob"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

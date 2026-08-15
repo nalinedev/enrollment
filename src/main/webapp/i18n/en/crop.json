@@ -1,0 +1,30 @@
+{
+  "coopfullApp": {
+    "crop": {
+      "home": {
+        "title": "Crops",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Crop",
+        "createOrEditLabel": "Create or edit a Crop",
+        "notFound": "No Crops found"
+      },
+      "created": "A new Crop is created with identifier {{ param }}",
+      "updated": "A Crop is updated with identifier {{ param }}",
+      "deleted": "A Crop is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Crop {{ id }}?"
+      },
+      "detail": {
+        "title": "Crop"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "scientificName": "Scientific Name",
+      "category": "Category",
+      "description": "Description",
+      "perennial": "Perennial",
+      "active": "Active"
+    }
+  }
+}

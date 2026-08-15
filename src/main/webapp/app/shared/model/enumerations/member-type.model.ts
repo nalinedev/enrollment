@@ -1,0 +1,5 @@
+export enum MemberType {
+  INDIVIDUAL = 'INDIVIDUAL',
+
+  ORGANIZATION = 'ORGANIZATION',
+}

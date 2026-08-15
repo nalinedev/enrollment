@@ -1,0 +1,29 @@
+{
+  "coopfullApp": {
+    "cooperativeUser": {
+      "home": {
+        "title": "CooperativeUsers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Cooperative User",
+        "createOrEditLabel": "Créer ou éditer un Cooperative User",
+        "notFound": "Aucun Cooperative User trouvé"
+      },
+      "created": "Un nouveau Cooperative User a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cooperative User avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cooperative User avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Cooperative User {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cooperative User"
+      },
+      "id": "ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active",
+      "appUser": "App User",
+      "cooperative": "Cooperative",
+      "role": "Role"
+    }
+  }
+}

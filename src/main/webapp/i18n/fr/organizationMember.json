@@ -1,0 +1,34 @@
+{
+  "coopfullApp": {
+    "organizationMember": {
+      "home": {
+        "title": "OrganizationMembers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Organization Member",
+        "createOrEditLabel": "Créer ou éditer un Organization Member",
+        "notFound": "Aucun Organization Member trouvé"
+      },
+      "created": "Un nouveau Organization Member a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Organization Member avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Organization Member avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Organization Member {{ id }} ?"
+      },
+      "detail": {
+        "title": "Organization Member"
+      },
+      "id": "ID",
+      "legalName": "Legal Name",
+      "tradeName": "Trade Name",
+      "registrationNumber": "Registration Number",
+      "taxNumber": "Tax Number",
+      "legalForm": "Legal Form",
+      "registrationDate": "Registration Date",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "website": "Website",
+      "description": "Description",
+      "member": "Member"
+    }
+  }
+}

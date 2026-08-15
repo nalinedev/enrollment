@@ -1,0 +1,45 @@
+{
+  "coopfullApp": {
+    "aquacultureActivity": {
+      "home": {
+        "title": "Aquaculture Activities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Aquaculture Activity",
+        "createOrEditLabel": "Create or edit a Aquaculture Activity",
+        "notFound": "No Aquaculture Activities found"
+      },
+      "created": "A new Aquaculture Activity is created with identifier {{ param }}",
+      "updated": "A Aquaculture Activity is updated with identifier {{ param }}",
+      "deleted": "A Aquaculture Activity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Aquaculture Activity {{ id }}?"
+      },
+      "detail": {
+        "title": "Aquaculture Activity"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "productionMode": "Production Mode",
+      "ownershipType": "Ownership Type",
+      "productionType": "Production Type",
+      "systemType": "System Type",
+      "startDate": "Start Date",
+      "totalArea": "Total Area",
+      "areaUnit": "Area Unit",
+      "waterSource": "Water Source",
+      "numberOfProductionUnits": "Number Of Production Units",
+      "productionUnitDescription": "Production Unit Description",
+      "status": "Status",
+      "annualRevenue": "Annual Revenue",
+      "monthlyRevenue": "Monthly Revenue",
+      "employees": "Employees",
+      "certification": "Certification",
+      "notes": "Notes",
+      "location": "Location",
+      "aquaticSpecies": "Aquatic Species",
+      "economicActivity": "Economic Activity",
+      "productions": "Productions"
+    }
+  }
+}

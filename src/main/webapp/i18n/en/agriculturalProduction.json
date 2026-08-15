@@ -1,0 +1,39 @@
+{
+  "coopfullApp": {
+    "agriculturalProduction": {
+      "home": {
+        "title": "Agricultural Productions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Agricultural Production",
+        "createOrEditLabel": "Create or edit a Agricultural Production",
+        "notFound": "No Agricultural Productions found"
+      },
+      "created": "A new Agricultural Production is created with identifier {{ param }}",
+      "updated": "A Agricultural Production is updated with identifier {{ param }}",
+      "deleted": "A Agricultural Production is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agricultural Production {{ id }}?"
+      },
+      "detail": {
+        "title": "Agricultural Production"
+      },
+      "id": "ID",
+      "area": "Area",
+      "areaUnit": "Area Unit",
+      "plantingDate": "Planting Date",
+      "harvestStartDate": "Harvest Start Date",
+      "harvestEndDate": "Harvest End Date",
+      "productionQuantity": "Production Quantity",
+      "productionUnit": "Production Unit",
+      "expectedAnnualProduction": "Expected Annual Production",
+      "numberOfPlants": "Number Of Plants",
+      "plantingDensity": "Planting Density",
+      "productionYear": "Production Year",
+      "status": "Status",
+      "notes": "Notes",
+      "agriculturalActivity": "Agricultural Activity",
+      "crop": "Crop",
+      "cropVariety": "Crop Variety"
+    }
+  }
+}

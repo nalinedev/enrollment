@@ -1,0 +1,9 @@
+{
+  "coopfullApp": {
+    "MemberType": {
+      "null": "",
+      "INDIVIDUAL": "INDIVIDUAL",
+      "ORGANIZATION": "ORGANIZATION"
+    }
+  }
+}

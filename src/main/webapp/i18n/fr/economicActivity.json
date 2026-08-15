@@ -1,0 +1,39 @@
+{
+  "coopfullApp": {
+    "economicActivity": {
+      "home": {
+        "title": "EconomicActivities",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Economic Activity",
+        "createOrEditLabel": "Créer ou éditer un Economic Activity",
+        "notFound": "Aucun Economic Activity trouvé"
+      },
+      "created": "Un nouveau Economic Activity a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Economic Activity avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Economic Activity avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Economic Activity {{ id }} ?"
+      },
+      "detail": {
+        "title": "Economic Activity"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "mainActivity": "Main Activity",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "annualRevenue": "Annual Revenue",
+      "monthlyRevenue": "Monthly Revenue",
+      "numberOfEmployees": "Number Of Employees",
+      "status": "Status",
+      "notes": "Notes",
+      "agriculturalActivity": "Agricultural Activity",
+      "livestockActivity": "Livestock Activity",
+      "aquacultureActivity": "Aquaculture Activity",
+      "member": "Member",
+      "activityType": "Activity Type",
+      "location": "Location"
+    }
+  }
+}

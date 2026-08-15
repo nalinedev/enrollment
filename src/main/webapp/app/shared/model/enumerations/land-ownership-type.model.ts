@@ -1,0 +1,15 @@
+export enum LandOwnershipType {
+  OWNER = 'OWNER',
+
+  LEASED = 'LEASED',
+
+  FAMILY_LAND = 'FAMILY_LAND',
+
+  COMMUNITY_LAND = 'COMMUNITY_LAND',
+
+  BORROWED = 'BORROWED',
+
+  OCCUPIED = 'OCCUPIED',
+
+  OTHER = 'OTHER',
+}

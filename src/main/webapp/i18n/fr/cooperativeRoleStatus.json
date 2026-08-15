@@ -1,0 +1,9 @@
+{
+  "coopfullApp": {
+    "CooperativeRoleStatus": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE"
+    }
+  }
+}

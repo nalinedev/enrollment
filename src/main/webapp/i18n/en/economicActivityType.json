@@ -1,0 +1,28 @@
+{
+  "coopfullApp": {
+    "economicActivityType": {
+      "home": {
+        "title": "Economic Activity Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Economic Activity Type",
+        "createOrEditLabel": "Create or edit a Economic Activity Type",
+        "notFound": "No Economic Activity Types found"
+      },
+      "created": "A new Economic Activity Type is created with identifier {{ param }}",
+      "updated": "A Economic Activity Type is updated with identifier {{ param }}",
+      "deleted": "A Economic Activity Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Economic Activity Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Economic Activity Type"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "sector": "Sector",
+      "active": "Active"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+id;production_date;number_of_animals;stocking_density;production_quantity;production_unit;average_weight_grams;mortality_count;stocking_count;harvested_count;expected_production;expected_harvest_date;actual_harvest_date;status;notes
+1;2026-08-14;32119;16484.56;25995.57;drat once list;14586.98;28777;22670;2574;7648.51;2026-08-15;2026-08-15;ACTIVE;../fake-data/blob/hipster.txt
+2;2026-08-15;3124;19286.6;15210.21;breastplate tabletop;16821.91;2747;19363;30923;21304.41;2026-08-15;2026-08-15;ACTIVE;../fake-data/blob/hipster.txt
+3;2026-08-15;27660;26435.94;32336.65;beneath soybean;5970.14;6363;30704;23746;12689.07;2026-08-14;2026-08-15;PLANNED;../fake-data/blob/hipster.txt
+4;2026-08-15;11468;29966.51;31379.89;while plan;13765.81;1080;23969;31852;9667.86;2026-08-15;2026-08-14;HARVESTED;../fake-data/blob/hipster.txt
+5;2026-08-15;21627;18405.22;13150.67;whoever reassemble fog;2022.02;30212;2936;26511;4731.6;2026-08-14;2026-08-14;PLANNED;../fake-data/blob/hipster.txt
+6;2026-08-15;10735;10487.02;30430.97;for tightly;15753.42;12801;23208;20901;28245.31;2026-08-15;2026-08-15;ABANDONED;../fake-data/blob/hipster.txt
+7;2026-08-14;17211;5197.29;25921.24;wedge unselfish mmm;18588.07;19526;3577;1919;1474.84;2026-08-14;2026-08-15;ACTIVE;../fake-data/blob/hipster.txt
+8;2026-08-15;7898;5105.34;25802.71;roundabout;8082.41;31651;892;14503;6738.28;2026-08-15;2026-08-15;HARVESTED;../fake-data/blob/hipster.txt
+9;2026-08-15;27897;3253.7;14600.37;yet sedately very;26347.22;17746;31910;12952;4782.59;2026-08-15;2026-08-15;ACTIVE;../fake-data/blob/hipster.txt
+10;2026-08-14;14635;3397.37;29864.16;converse;20792.91;18422;9381;27803;14191.38;2026-08-14;2026-08-15;ABANDONED;../fake-data/blob/hipster.txt

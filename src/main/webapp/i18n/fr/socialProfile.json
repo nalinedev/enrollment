@@ -1,0 +1,34 @@
+{
+  "coopfullApp": {
+    "socialProfile": {
+      "home": {
+        "title": "SocialProfiles",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Social Profile",
+        "createOrEditLabel": "Créer ou éditer un Social Profile",
+        "notFound": "Aucun Social Profile trouvé"
+      },
+      "created": "Un nouveau Social Profile a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Social Profile avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Social Profile avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Social Profile {{ id }} ?"
+      },
+      "detail": {
+        "title": "Social Profile"
+      },
+      "id": "ID",
+      "maritalStatus": "Marital Status",
+      "numberOfChildren": "Number Of Children",
+      "numberOfDependents": "Number Of Dependents",
+      "educationLevel": "Education Level",
+      "housingStatus": "Housing Status",
+      "residenceSince": "Residence Since",
+      "disabilityStatus": "Disability Status",
+      "disabilityDescription": "Disability Description",
+      "socialCategory": "Social Category",
+      "notes": "Notes",
+      "member": "Member"
+    }
+  }
+}

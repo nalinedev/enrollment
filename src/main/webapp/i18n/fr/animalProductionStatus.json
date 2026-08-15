@@ -1,0 +1,13 @@
+{
+  "coopfullApp": {
+    "AnimalProductionStatus": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "SOLD": "SOLD",
+      "SLAUGHTERED": "SLAUGHTERED",
+      "DEAD": "DEAD",
+      "TRANSFERRED": "TRANSFERRED",
+      "OTHER": "OTHER"
+    }
+  }
+}

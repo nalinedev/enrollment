@@ -1,0 +1,31 @@
+{
+  "coopfullApp": {
+    "aquaticSpecies": {
+      "home": {
+        "title": "AquaticSpecieses",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Aquatic Species",
+        "createOrEditLabel": "Créer ou éditer un Aquatic Species",
+        "notFound": "Aucun Aquatic Species trouvé"
+      },
+      "created": "Un nouveau Aquatic Species a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Aquatic Species avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Aquatic Species avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Aquatic Species {{ id }} ?"
+      },
+      "detail": {
+        "title": "Aquatic Species"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "scientificName": "Scientific Name",
+      "category": "Category",
+      "description": "Description",
+      "freshwater": "Freshwater",
+      "saltwater": "Saltwater",
+      "active": "Active"
+    }
+  }
+}

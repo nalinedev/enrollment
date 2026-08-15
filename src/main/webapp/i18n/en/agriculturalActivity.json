@@ -1,0 +1,35 @@
+{
+  "coopfullApp": {
+    "agriculturalActivity": {
+      "home": {
+        "title": "Agricultural Activities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Agricultural Activity",
+        "createOrEditLabel": "Create or edit a Agricultural Activity",
+        "notFound": "No Agricultural Activities found"
+      },
+      "created": "A new Agricultural Activity is created with identifier {{ param }}",
+      "updated": "A Agricultural Activity is updated with identifier {{ param }}",
+      "deleted": "A Agricultural Activity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agricultural Activity {{ id }}?"
+      },
+      "detail": {
+        "title": "Agricultural Activity"
+      },
+      "id": "ID",
+      "totalArea": "Total Area",
+      "areaUnit": "Area Unit",
+      "exploitationMode": "Exploitation Mode",
+      "ownershipType": "Ownership Type",
+      "startDate": "Start Date",
+      "irrigationAvailable": "Irrigation Available",
+      "organicProduction": "Organic Production",
+      "certification": "Certification",
+      "description": "Description",
+      "location": "Location",
+      "economicActivity": "Economic Activity",
+      "productions": "Productions"
+    }
+  }
+}

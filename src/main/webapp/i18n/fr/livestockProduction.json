@@ -1,0 +1,36 @@
+{
+  "coopfullApp": {
+    "livestockProduction": {
+      "home": {
+        "title": "LivestockProductions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Livestock Production",
+        "createOrEditLabel": "Créer ou éditer un Livestock Production",
+        "notFound": "Aucun Livestock Production trouvé"
+      },
+      "created": "Un nouveau Livestock Production a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Livestock Production avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Livestock Production avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Livestock Production {{ id }} ?"
+      },
+      "detail": {
+        "title": "Livestock Production"
+      },
+      "id": "ID",
+      "productionDate": "Production Date",
+      "animalSex": "Animal Sex",
+      "numberOfAnimals": "Number Of Animals",
+      "averageAgeMonths": "Average Age Months",
+      "averageWeightKg": "Average Weight Kg",
+      "productionQuantity": "Production Quantity",
+      "productionUnit": "Production Unit",
+      "mortalityCount": "Mortality Count",
+      "birthCount": "Birth Count",
+      "soldCount": "Sold Count",
+      "status": "Status",
+      "notes": "Notes",
+      "livestockActivity": "Livestock Activity"
+    }
+  }
+}

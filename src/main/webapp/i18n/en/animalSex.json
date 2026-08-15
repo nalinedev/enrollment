@@ -1,0 +1,10 @@
+{
+  "coopfullApp": {
+    "AnimalSex": {
+      "null": "",
+      "MALE": "MALE",
+      "FEMALE": "FEMALE",
+      "MIXED": "MIXED"
+    }
+  }
+}

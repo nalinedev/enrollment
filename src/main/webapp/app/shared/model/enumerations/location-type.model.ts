@@ -1,0 +1,21 @@
+export enum LocationType {
+  COUNTRY = 'COUNTRY',
+
+  REGION = 'REGION',
+
+  DEPARTMENT = 'DEPARTMENT',
+
+  DISTRICT = 'DISTRICT',
+
+  CITY = 'CITY',
+
+  TOWN = 'TOWN',
+
+  VILLAGE = 'VILLAGE',
+
+  QUARTER = 'QUARTER',
+
+  ADDRESS = 'ADDRESS',
+
+  OTHER = 'OTHER',
+}

@@ -1,0 +1,11 @@
+id;production_date;animal_sex;number_of_animals;average_age_months;average_weight_kg;production_quantity;production_unit;mortality_count;birth_count;sold_count;status;notes
+1;2026-08-14;MALE;30761;31643;18378.38;31063.7;paltry;28507;29829;10007;ACTIVE;../fake-data/blob/hipster.txt
+2;2026-08-15;FEMALE;5713;20490;30620;3644;affiliate powerfully;14666;2789;434;OTHER;../fake-data/blob/hipster.txt
+3;2026-08-14;MIXED;18331;10015;26302.01;3073.79;rebuff meh between;1640;11561;20399;ACTIVE;../fake-data/blob/hipster.txt
+4;2026-08-15;MIXED;28206;674;22676.44;15931.35;sign daily;17655;53;26291;ACTIVE;../fake-data/blob/hipster.txt
+5;2026-08-15;FEMALE;31322;30948;12100.14;21468.82;puritan unless;21637;19979;31746;SLAUGHTERED;../fake-data/blob/hipster.txt
+6;2026-08-15;MALE;978;14806;1447.7;15039.08;um psst;22022;7682;20888;ACTIVE;../fake-data/blob/hipster.txt
+7;2026-08-15;MALE;2461;21998;13281.26;21846.63;lazy repeat;20510;24639;19598;ACTIVE;../fake-data/blob/hipster.txt
+8;2026-08-15;MIXED;30296;24111;2277.58;29426.83;closely majestically nautical;1064;21424;1338;TRANSFERRED;../fake-data/blob/hipster.txt
+9;2026-08-15;MIXED;11156;7842;20106.78;3084.26;pfft;32170;2702;15269;OTHER;../fake-data/blob/hipster.txt
+10;2026-08-15;FEMALE;10338;18270;6414.47;8730.35;rust curiously;26479;10389;32149;ACTIVE;../fake-data/blob/hipster.txt

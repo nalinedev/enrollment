@@ -19,7 +19,59 @@
     <property name="timeType" value="time(6)" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175933_added_entity_Cooperative.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175934_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175935_added_entity_CooperativeBranch.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175936_added_entity_Member.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175937_added_entity_IndividualMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175938_added_entity_OrganizationMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175939_added_entity_MembershipApplication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175940_added_entity_SocialProfile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175941_added_entity_FamilyMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175942_added_entity_ProfessionalProfile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175943_added_entity_IdentityDocument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175944_added_entity_MemberDocument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175945_added_entity_EconomicActivityType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175946_added_entity_EconomicActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175947_added_entity_AgriculturalActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175948_added_entity_Crop.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175949_added_entity_CropVariety.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175950_added_entity_AgriculturalProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175951_added_entity_LivestockType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175952_added_entity_LivestockActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175953_added_entity_LivestockProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175954_added_entity_AquaticSpecies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175955_added_entity_AquacultureActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175956_added_entity_AquacultureProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175957_added_entity_AppUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175958_added_entity_CooperativeRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175959_added_entity_CooperativeUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180000_added_entity_BranchUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180001_added_entity_Permission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180002_added_entity_AuditLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180003_added_entity_NumberSequence.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20260815175934_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175935_added_entity_constraints_CooperativeBranch.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175936_added_entity_constraints_Member.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175939_added_entity_constraints_MembershipApplication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175941_added_entity_constraints_FamilyMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175943_added_entity_constraints_IdentityDocument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175944_added_entity_constraints_MemberDocument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175946_added_entity_constraints_EconomicActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175947_added_entity_constraints_AgriculturalActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175949_added_entity_constraints_CropVariety.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175950_added_entity_constraints_AgriculturalProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175952_added_entity_constraints_LivestockActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175953_added_entity_constraints_LivestockProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175955_added_entity_constraints_AquacultureActivity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175956_added_entity_constraints_AquacultureProduction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175957_added_entity_constraints_AppUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175958_added_entity_constraints_CooperativeRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815175959_added_entity_constraints_CooperativeUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180000_added_entity_constraints_BranchUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180002_added_entity_constraints_AuditLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260815180003_added_entity_constraints_NumberSequence.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

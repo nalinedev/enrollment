@@ -1,0 +1,15 @@
+export enum MembershipApplicationStatus {
+  DRAFT = 'DRAFT',
+
+  SUBMITTED = 'SUBMITTED',
+
+  UNDER_REVIEW = 'UNDER_REVIEW',
+
+  NEEDS_CORRECTION = 'NEEDS_CORRECTION',
+
+  APPROVED = 'APPROVED',
+
+  REJECTED = 'REJECTED',
+
+  CANCELLED = 'CANCELLED',
+}

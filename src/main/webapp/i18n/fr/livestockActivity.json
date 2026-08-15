@@ -1,0 +1,45 @@
+{
+  "coopfullApp": {
+    "livestockActivity": {
+      "home": {
+        "title": "LivestockActivities",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Livestock Activity",
+        "createOrEditLabel": "Créer ou éditer un Livestock Activity",
+        "notFound": "Aucun Livestock Activity trouvé"
+      },
+      "created": "Un nouveau Livestock Activity a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Livestock Activity avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Livestock Activity avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Livestock Activity {{ id }} ?"
+      },
+      "detail": {
+        "title": "Livestock Activity"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "productionMode": "Production Mode",
+      "ownershipType": "Ownership Type",
+      "productionType": "Production Type",
+      "startDate": "Start Date",
+      "totalArea": "Total Area",
+      "areaUnit": "Area Unit",
+      "status": "Status",
+      "numberOfAnimals": "Number Of Animals",
+      "annualRevenue": "Annual Revenue",
+      "monthlyRevenue": "Monthly Revenue",
+      "employees": "Employees",
+      "veterinaryServiceAvailable": "Veterinary Service Available",
+      "feedSource": "Feed Source",
+      "waterSource": "Water Source",
+      "certification": "Certification",
+      "notes": "Notes",
+      "location": "Location",
+      "livestockType": "Livestock Type",
+      "economicActivity": "Economic Activity",
+      "productions": "Productions"
+    }
+  }
+}

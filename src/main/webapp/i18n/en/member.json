@@ -1,0 +1,38 @@
+{
+  "coopfullApp": {
+    "member": {
+      "home": {
+        "title": "Members",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Member",
+        "createOrEditLabel": "Create or edit a Member",
+        "notFound": "No Members found"
+      },
+      "created": "A new Member is created with identifier {{ param }}",
+      "updated": "A Member is updated with identifier {{ param }}",
+      "deleted": "A Member is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Member {{ id }}?"
+      },
+      "detail": {
+        "title": "Member"
+      },
+      "id": "ID",
+      "memberNumber": "Member Number",
+      "memberType": "Member Type",
+      "status": "Status",
+      "admissionDate": "Admission Date",
+      "exitDate": "Exit Date",
+      "exitReason": "Exit Reason",
+      "notes": "Notes",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "individualMember": "Individual Member",
+      "organizationMember": "Organization Member",
+      "socialProfile": "Social Profile",
+      "professionalProfile": "Professional Profile",
+      "cooperative": "Cooperative",
+      "branch": "Branch"
+    }
+  }
+}

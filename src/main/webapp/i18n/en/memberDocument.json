@@ -1,0 +1,36 @@
+{
+  "coopfullApp": {
+    "memberDocument": {
+      "home": {
+        "title": "Member Documents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Member Document",
+        "createOrEditLabel": "Create or edit a Member Document",
+        "notFound": "No Member Documents found"
+      },
+      "created": "A new Member Document is created with identifier {{ param }}",
+      "updated": "A Member Document is updated with identifier {{ param }}",
+      "deleted": "A Member Document is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Member Document {{ id }}?"
+      },
+      "detail": {
+        "title": "Member Document"
+      },
+      "id": "ID",
+      "documentType": "Document Type",
+      "originalFileName": "Original File Name",
+      "storedFileName": "Stored File Name",
+      "contentType": "Content Type",
+      "fileSize": "File Size",
+      "storagePath": "Storage Path",
+      "checksum": "Checksum",
+      "verificationStatus": "Verification Status",
+      "uploadedAt": "Uploaded At",
+      "verifiedAt": "Verified At",
+      "notes": "Notes",
+      "member": "Member",
+      "uploadedBy": "Uploaded By"
+    }
+  }
+}

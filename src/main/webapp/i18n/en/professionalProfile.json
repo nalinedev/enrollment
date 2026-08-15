@@ -1,0 +1,35 @@
+{
+  "coopfullApp": {
+    "professionalProfile": {
+      "home": {
+        "title": "Professional Profiles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Professional Profile",
+        "createOrEditLabel": "Create or edit a Professional Profile",
+        "notFound": "No Professional Profiles found"
+      },
+      "created": "A new Professional Profile is created with identifier {{ param }}",
+      "updated": "A Professional Profile is updated with identifier {{ param }}",
+      "deleted": "A Professional Profile is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Professional Profile {{ id }}?"
+      },
+      "detail": {
+        "title": "Professional Profile"
+      },
+      "id": "ID",
+      "employmentStatus": "Employment Status",
+      "employerName": "Employer Name",
+      "jobTitle": "Job Title",
+      "profession": "Profession",
+      "sector": "Sector",
+      "yearsOfExperience": "Years Of Experience",
+      "monthlyIncome": "Monthly Income",
+      "annualIncome": "Annual Income",
+      "employmentStartDate": "Employment Start Date",
+      "employerLocation": "Employer Location",
+      "notes": "Notes",
+      "member": "Member"
+    }
+  }
+}

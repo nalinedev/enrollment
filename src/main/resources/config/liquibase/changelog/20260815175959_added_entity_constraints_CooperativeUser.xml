@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity CooperativeUser.
+    -->
+    <changeSet id="20260815175959-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="app_user_id"
+                                 baseTableName="cooperative_user"
+                                 constraintName="fk_cooperative_user__app_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="app_user"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="cooperative_id"
+                                 baseTableName="cooperative_user"
+                                 constraintName="fk_cooperative_user__cooperative_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cooperative"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="cooperative_user"
+                                 constraintName="fk_cooperative_user__role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cooperative_role"
+                                 />
+    </changeSet>
+</databaseChangeLog>

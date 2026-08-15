@@ -1,0 +1,13 @@
+export enum DocumentStatus {
+  VALID = 'VALID',
+
+  EXPIRED = 'EXPIRED',
+
+  LOST = 'LOST',
+
+  STOLEN = 'STOLEN',
+
+  CANCELLED = 'CANCELLED',
+
+  PENDING_VERIFICATION = 'PENDING_VERIFICATION',
+}

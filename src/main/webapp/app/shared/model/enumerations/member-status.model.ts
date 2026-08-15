@@ -1,0 +1,13 @@
+export enum MemberStatus {
+  PENDING = 'PENDING',
+
+  ACTIVE = 'ACTIVE',
+
+  SUSPENDED = 'SUSPENDED',
+
+  INACTIVE = 'INACTIVE',
+
+  DECEASED = 'DECEASED',
+
+  CLOSED = 'CLOSED',
+}

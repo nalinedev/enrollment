@@ -1,0 +1,37 @@
+{
+  "coopfullApp": {
+    "membershipApplication": {
+      "home": {
+        "title": "Membership Applications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Membership Application",
+        "createOrEditLabel": "Create or edit a Membership Application",
+        "notFound": "No Membership Applications found"
+      },
+      "created": "A new Membership Application is created with identifier {{ param }}",
+      "updated": "A Membership Application is updated with identifier {{ param }}",
+      "deleted": "A Membership Application is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Membership Application {{ id }}?"
+      },
+      "detail": {
+        "title": "Membership Application"
+      },
+      "id": "ID",
+      "applicationNumber": "Application Number",
+      "status": "Status",
+      "applicationDate": "Application Date",
+      "submittedAt": "Submitted At",
+      "reviewedAt": "Reviewed At",
+      "approvedAt": "Approved At",
+      "rejectedAt": "Rejected At",
+      "rejectionReason": "Rejection Reason",
+      "reviewComments": "Review Comments",
+      "confirmation": "Confirmation",
+      "notes": "Notes",
+      "member": "Member",
+      "cooperative": "Cooperative",
+      "branch": "Branch"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "coopfullApp": {
+    "individualMember": {
+      "home": {
+        "title": "IndividualMembers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Individual Member",
+        "createOrEditLabel": "Créer ou éditer un Individual Member",
+        "notFound": "Aucun Individual Member trouvé"
+      },
+      "created": "Un nouveau Individual Member a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Individual Member avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Individual Member avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Individual Member {{ id }} ?"
+      },
+      "detail": {
+        "title": "Individual Member"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "maidenName": "Maiden Name",
+      "gender": "Gender",
+      "birthDate": "Birth Date",
+      "birthPlace": "Birth Place",
+      "nationality": "Nationality",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "occupation": "Occupation",
+      "member": "Member"
+    }
+  }
+}

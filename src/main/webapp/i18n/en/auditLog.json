@@ -1,0 +1,36 @@
+{
+  "coopfullApp": {
+    "auditLog": {
+      "home": {
+        "title": "Audit Logs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Audit Log",
+        "createOrEditLabel": "Create or edit a Audit Log",
+        "notFound": "No Audit Logs found"
+      },
+      "created": "A new Audit Log is created with identifier {{ param }}",
+      "updated": "A Audit Log is updated with identifier {{ param }}",
+      "deleted": "A Audit Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Audit Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Audit Log"
+      },
+      "id": "ID",
+      "action": "Action",
+      "entityName": "Entity Name",
+      "entityId": "Entity Id",
+      "username": "Username",
+      "cooperativeId": "Cooperative Id",
+      "branchId": "Branch Id",
+      "timestamp": "Timestamp",
+      "ipAddress": "Ip Address",
+      "userAgent": "User Agent",
+      "oldValue": "Old Value",
+      "newValue": "New Value",
+      "description": "Description",
+      "appUser": "App User"
+    }
+  }
+}

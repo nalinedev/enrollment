@@ -1,0 +1,15 @@
+export enum AquacultureProductionType {
+  FOOD = 'FOOD',
+
+  BREEDING = 'BREEDING',
+
+  FINGERLINGS = 'FINGERLINGS',
+
+  ORNAMENTAL = 'ORNAMENTAL',
+
+  COMMERCIAL = 'COMMERCIAL',
+
+  MULTIPURPOSE = 'MULTIPURPOSE',
+
+  OTHER = 'OTHER',
+}

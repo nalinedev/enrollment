@@ -1,0 +1,38 @@
+{
+  "coopfullApp": {
+    "aquacultureProduction": {
+      "home": {
+        "title": "Aquaculture Productions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Aquaculture Production",
+        "createOrEditLabel": "Create or edit a Aquaculture Production",
+        "notFound": "No Aquaculture Productions found"
+      },
+      "created": "A new Aquaculture Production is created with identifier {{ param }}",
+      "updated": "A Aquaculture Production is updated with identifier {{ param }}",
+      "deleted": "A Aquaculture Production is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Aquaculture Production {{ id }}?"
+      },
+      "detail": {
+        "title": "Aquaculture Production"
+      },
+      "id": "ID",
+      "productionDate": "Production Date",
+      "numberOfAnimals": "Number Of Animals",
+      "stockingDensity": "Stocking Density",
+      "productionQuantity": "Production Quantity",
+      "productionUnit": "Production Unit",
+      "averageWeightGrams": "Average Weight Grams",
+      "mortalityCount": "Mortality Count",
+      "stockingCount": "Stocking Count",
+      "harvestedCount": "Harvested Count",
+      "expectedProduction": "Expected Production",
+      "expectedHarvestDate": "Expected Harvest Date",
+      "actualHarvestDate": "Actual Harvest Date",
+      "status": "Status",
+      "notes": "Notes",
+      "aquacultureActivity": "Aquaculture Activity"
+    }
+  }
+}

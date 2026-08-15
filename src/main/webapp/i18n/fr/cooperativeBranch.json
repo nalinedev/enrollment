@@ -1,0 +1,33 @@
+{
+  "coopfullApp": {
+    "cooperativeBranch": {
+      "home": {
+        "title": "CooperativeBranches",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Cooperative Branch",
+        "createOrEditLabel": "Créer ou éditer un Cooperative Branch",
+        "notFound": "Aucun Cooperative Branch trouvé"
+      },
+      "created": "Un nouveau Cooperative Branch a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cooperative Branch avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cooperative Branch avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Cooperative Branch {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cooperative Branch"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "phone": "Phone",
+      "email": "Email",
+      "status": "Status",
+      "openingDate": "Opening Date",
+      "closingDate": "Closing Date",
+      "cooperative": "Cooperative",
+      "location": "Location"
+    }
+  }
+}

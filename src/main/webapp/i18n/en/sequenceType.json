@@ -1,0 +1,10 @@
+{
+  "coopfullApp": {
+    "SequenceType": {
+      "null": "",
+      "MEMBER": "MEMBER",
+      "APPLICATION": "APPLICATION",
+      "DOCUMENT": "DOCUMENT"
+    }
+  }
+}

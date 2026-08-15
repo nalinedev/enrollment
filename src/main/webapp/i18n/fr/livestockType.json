@@ -1,0 +1,29 @@
+{
+  "coopfullApp": {
+    "livestockType": {
+      "home": {
+        "title": "LivestockTypes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Livestock Type",
+        "createOrEditLabel": "Créer ou éditer un Livestock Type",
+        "notFound": "Aucun Livestock Type trouvé"
+      },
+      "created": "Un nouveau Livestock Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Livestock Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Livestock Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Livestock Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Livestock Type"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "scientificName": "Scientific Name",
+      "category": "Category",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

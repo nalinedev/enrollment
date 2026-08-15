@@ -1,0 +1,29 @@
+{
+  "coopfullApp": {
+    "branchUser": {
+      "home": {
+        "title": "BranchUsers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Branch User",
+        "createOrEditLabel": "Créer ou éditer un Branch User",
+        "notFound": "Aucun Branch User trouvé"
+      },
+      "created": "Un nouveau Branch User a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Branch User avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Branch User avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Branch User {{ id }} ?"
+      },
+      "detail": {
+        "title": "Branch User"
+      },
+      "id": "ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active",
+      "appUser": "App User",
+      "branch": "Branch",
+      "role": "Role"
+    }
+  }
+}
