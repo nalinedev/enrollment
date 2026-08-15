@@ -1,0 +1,1337 @@
+
+
+/*
+ * ============================================================
+ * ENUMERATIONS
+ * ============================================================
+ */
+
+
+/*
+ * COOPERATIVE
+ */
+enum CooperativeStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+
+
+/*
+ * LOCATION
+ */
+enum LocationType {
+  COUNTRY,
+  REGION,
+  DEPARTMENT,
+  DISTRICT,
+  CITY,
+  TOWN,
+  VILLAGE,
+  QUARTER,
+  ADDRESS,
+  OTHER
+}
+
+
+/*
+ * MEMBER
+ */
+enum MemberType {
+  INDIVIDUAL,
+  ORGANIZATION
+}
+
+enum MemberStatus {
+  PENDING,
+  ACTIVE,
+  SUSPENDED,
+  INACTIVE,
+  DECEASED,
+  CLOSED
+}
+
+
+/*
+ * MEMBERSHIP APPLICATION
+ */
+enum MembershipApplicationStatus {
+  DRAFT,
+  SUBMITTED,
+  UNDER_REVIEW,
+  NEEDS_CORRECTION,
+  APPROVED,
+  REJECTED,
+  CANCELLED
+}
+
+
+/*
+ * SOCIAL PROFILE
+ */
+enum MaritalStatus {
+  SINGLE,
+  MARRIED,
+  DIVORCED,
+  WIDOWED,
+  SEPARATED,
+  OTHER,
+  UNKNOWN
+}
+
+
+/*
+ * IDENTITY DOCUMENT
+ */
+enum DocumentStatus {
+  VALID,
+  EXPIRED,
+  LOST,
+  STOLEN,
+  CANCELLED,
+  PENDING_VERIFICATION
+}
+
+
+/*
+ * MEMBER DOCUMENT
+ */
+enum MemberDocumentType {
+  IDENTITY_CARD,
+  PASSPORT,
+  DRIVERS_LICENSE,
+  BIRTH_CERTIFICATE,
+  MARRIAGE_CERTIFICATE,
+  TAX_DOCUMENT,
+  BUSINESS_REGISTRATION,
+  LAND_DOCUMENT,
+  MEMBERSHIP_FORM,
+  PHOTO,
+  OTHER
+}
+
+enum DocumentVerificationStatus {
+  PENDING,
+  VERIFIED,
+  REJECTED
+}
+
+
+/*
+ * ECONOMIC ACTIVITY
+ */
+enum EconomicActivityStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+
+
+/*
+ * AGRICULTURE
+ */
+enum AgriculturalExploitationMode {
+  FAMILY,
+  INDIVIDUAL,
+  COOPERATIVE,
+  COMMERCIAL,
+  CONTRACTUAL,
+  OTHER
+}
+
+enum LandOwnershipType {
+  OWNER,
+  LEASED,
+  FAMILY_LAND,
+  COMMUNITY_LAND,
+  BORROWED,
+  OCCUPIED,
+  OTHER
+}
+
+
+/*
+ * AGRICULTURAL PRODUCTION
+ */
+enum ProductionStatus {
+  PLANNED,
+  ACTIVE,
+  HARVESTED,
+  COMPLETED,
+  ABANDONED
+}
+
+
+/*
+ * LIVESTOCK
+ */
+enum LivestockProductionMode {
+  FAMILY,
+  INDIVIDUAL,
+  COMMERCIAL,
+  COOPERATIVE,
+  CONTRACTUAL,
+  OTHER
+}
+
+enum LivestockOwnershipType {
+  OWNER,
+  LEASED,
+  SHARED,
+  COMMUNITY,
+  OTHER
+}
+
+enum LivestockStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+
+enum LivestockProductionType {
+  MEAT,
+  MILK,
+  EGGS,
+  BREEDING,
+  HONEY,
+  SKINS,
+  WOOL,
+  MULTIPURPOSE,
+  OTHER
+}
+
+enum AnimalSex {
+  MALE,
+  FEMALE,
+  MIXED
+}
+
+enum AnimalProductionStatus {
+  ACTIVE,
+  SOLD,
+  SLAUGHTERED,
+  DEAD,
+  TRANSFERRED,
+  OTHER
+}
+
+
+/*
+ * AQUACULTURE
+ */
+enum AquacultureProductionMode {
+  FAMILY,
+  INDIVIDUAL,
+  COMMERCIAL,
+  COOPERATIVE,
+  CONTRACTUAL,
+  OTHER
+}
+
+enum AquacultureOwnershipType {
+  OWNER,
+  LEASED,
+  SHARED,
+  COMMUNITY,
+  OTHER
+}
+
+enum AquacultureStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+
+enum AquacultureProductionType {
+  FOOD,
+  BREEDING,
+  FINGERLINGS,
+  ORNAMENTAL,
+  COMMERCIAL,
+  MULTIPURPOSE,
+  OTHER
+}
+
+enum AquacultureSystemType {
+  POND,
+  TANK,
+  CAGE,
+  RACEWAY,
+  RECIRCULATING,
+  EARTHEN_POND,
+  CONCRETE_POND,
+  OTHER
+}
+
+enum AquacultureProductionStatus {
+  PLANNED,
+  ACTIVE,
+  HARVESTED,
+  COMPLETED,
+  ABANDONED
+}
+
+
+/*
+ * APPLICATION USER
+ */
+enum AppUserStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  LOCKED
+}
+
+
+/*
+ * COOPERATIVE ROLE
+ */
+enum CooperativeRoleStatus {
+  ACTIVE,
+  INACTIVE
+}
+
+
+/*
+ * AUDIT
+ */
+enum AuditAction {
+  CREATE,
+  UPDATE,
+  DELETE,
+  VIEW,
+  APPROVE,
+  REJECT,
+  SUBMIT,
+  LOGIN,
+  LOGOUT,
+  VERIFY,
+  EXPORT,
+  OTHER
+}
+
+
+/*
+ * NUMBER SEQUENCE
+ */
+enum SequenceType {
+  MEMBER,
+  APPLICATION,
+  DOCUMENT
+}
+
+
+/*
+ * ============================================================
+ * COOPERATIVE
+ * ============================================================
+ */
+
+entity Cooperative {
+  code String required unique
+  name String required
+  legalName String
+  registrationNumber String
+  taxNumber String
+  description TextBlob
+  status CooperativeStatus required
+  foundedDate LocalDate
+  email String
+  phone String
+  website String
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+
+
+/*
+ * ============================================================
+ * LOCATION
+ * ============================================================
+ */
+
+entity Location {
+  code String required
+  name String required
+  type LocationType required
+  addressLine1 String
+  addressLine2 String
+  postalCode String
+  latitude BigDecimal
+  longitude BigDecimal
+  description String
+}
+
+
+/*
+ * ============================================================
+ * COOPERATIVE BRANCH
+ * ============================================================
+ */
+
+entity CooperativeBranch {
+  code String required
+  name String required
+  description String
+  phone String
+  email String
+  status CooperativeStatus required
+  openingDate LocalDate
+  closingDate LocalDate
+}
+
+
+/*
+ * ============================================================
+ * MEMBER
+ * ============================================================
+ */
+
+entity Member {
+  memberNumber String required unique
+  memberType MemberType required
+  status MemberStatus required
+  admissionDate LocalDate
+  exitDate LocalDate
+  exitReason String
+  notes TextBlob
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+
+
+/*
+ * ============================================================
+ * INDIVIDUAL MEMBER
+ * ============================================================
+ */
+
+entity IndividualMember {
+  firstName String required
+  middleName String
+  lastName String required
+  maidenName String
+  gender String
+  birthDate LocalDate
+  birthPlace String
+  nationality String
+  email String
+  phoneNumber String
+  occupation String
+}
+
+
+/*
+ * ============================================================
+ * ORGANIZATION MEMBER
+ * ============================================================
+ */
+
+entity OrganizationMember {
+  legalName String required
+  tradeName String
+  registrationNumber String
+  taxNumber String
+  legalForm String
+  registrationDate LocalDate
+  email String
+  phoneNumber String
+  website String
+  description TextBlob
+}
+
+
+/*
+ * ============================================================
+ * MEMBERSHIP APPLICATION
+ * ============================================================
+ */
+
+entity MembershipApplication {
+  applicationNumber String required unique
+  status MembershipApplicationStatus required
+  applicationDate LocalDate required
+  submittedAt Instant
+  reviewedAt Instant
+  approvedAt Instant
+  rejectedAt Instant
+  rejectionReason TextBlob
+  reviewComments TextBlob
+  confirmation Boolean required
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * SOCIAL PROFILE
+ * ============================================================
+ */
+
+entity SocialProfile {
+  maritalStatus MaritalStatus
+  numberOfChildren Integer
+  numberOfDependents Integer
+  educationLevel String
+  housingStatus String
+  residenceSince LocalDate
+  disabilityStatus Boolean
+  disabilityDescription TextBlob
+  socialCategory String
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * FAMILY MEMBER
+ * ============================================================
+ */
+
+entity FamilyMember {
+  firstName String required
+  middleName String
+  lastName String required
+  relationship String required
+  gender String
+  birthDate LocalDate
+  birthPlace String
+  nationality String
+  phoneNumber String
+  occupation String
+  dependent Boolean
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * PROFESSIONAL PROFILE
+ * ============================================================
+ */
+
+entity ProfessionalProfile {
+  employmentStatus String
+  employerName String
+  jobTitle String
+  profession String
+  sector String
+  yearsOfExperience Integer
+  monthlyIncome BigDecimal
+  annualIncome BigDecimal
+  employmentStartDate LocalDate
+  employerLocation String
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * IDENTITY DOCUMENT
+ * ============================================================
+ */
+
+entity IdentityDocument {
+  documentType String required
+  documentNumber String required
+  issueDate LocalDate
+  expiryDate LocalDate
+  issuingAuthority String
+  issuingCountry String
+  status DocumentStatus required
+  verified Boolean required
+  verificationDate Instant
+  verificationComment String
+}
+
+
+/*
+ * ============================================================
+ * MEMBER DOCUMENT
+ * ============================================================
+ */
+
+entity MemberDocument {
+  documentType MemberDocumentType required
+  originalFileName String
+  storedFileName String
+  contentType String
+  fileSize Long
+  storagePath String
+  checksum String
+  verificationStatus DocumentVerificationStatus required
+  uploadedAt Instant required
+  verifiedAt Instant
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * ECONOMIC ACTIVITY TYPE
+ * ============================================================
+ */
+
+entity EconomicActivityType {
+  code String required unique
+  name String required
+  description TextBlob
+  sector String
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * ECONOMIC ACTIVITY
+ * ============================================================
+ */
+
+entity EconomicActivity {
+  name String required
+  description TextBlob
+  mainActivity Boolean required
+  startDate LocalDate
+  endDate LocalDate
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  numberOfEmployees Integer
+  status EconomicActivityStatus required
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * AGRICULTURAL ACTIVITY
+ * ============================================================
+ */
+
+entity AgriculturalActivity {
+  totalArea BigDecimal required
+  areaUnit String required
+  exploitationMode AgriculturalExploitationMode
+  ownershipType LandOwnershipType
+  startDate LocalDate
+  irrigationAvailable Boolean
+  organicProduction Boolean
+  certification String
+  description TextBlob
+}
+
+
+/*
+ * ============================================================
+ * CROP
+ * ============================================================
+ */
+
+entity Crop {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  perennial Boolean
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * CROP VARIETY
+ * ============================================================
+ */
+
+entity CropVariety {
+  code String required unique
+  name String required
+  description TextBlob
+  origin String
+  maturityDays Integer
+  yieldPotential BigDecimal
+  diseaseResistance String
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * AGRICULTURAL PRODUCTION
+ * ============================================================
+ */
+
+entity AgriculturalProduction {
+  area BigDecimal required
+  areaUnit String required
+  plantingDate LocalDate
+  harvestStartDate LocalDate
+  harvestEndDate LocalDate
+  productionQuantity BigDecimal
+  productionUnit String
+  expectedAnnualProduction BigDecimal
+  numberOfPlants Integer
+  plantingDensity BigDecimal
+  productionYear Integer
+  status ProductionStatus required
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * LIVESTOCK TYPE
+ * ============================================================
+ */
+
+entity LivestockType {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * LIVESTOCK ACTIVITY
+ * ============================================================
+ */
+
+entity LivestockActivity {
+  name String required
+  description TextBlob
+  productionMode LivestockProductionMode
+  ownershipType LivestockOwnershipType
+  productionType LivestockProductionType
+  startDate LocalDate
+  totalArea BigDecimal
+  areaUnit String
+  status LivestockStatus required
+  numberOfAnimals Integer
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  employees Integer
+  veterinaryServiceAvailable Boolean
+  feedSource String
+  waterSource String
+  certification String
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * LIVESTOCK PRODUCTION
+ * ============================================================
+ */
+
+entity LivestockProduction {
+  productionDate LocalDate
+  animalSex AnimalSex
+  numberOfAnimals Integer required
+  averageAgeMonths Integer
+  averageWeightKg BigDecimal
+  productionQuantity BigDecimal
+  productionUnit String
+  mortalityCount Integer
+  birthCount Integer
+  soldCount Integer
+  status AnimalProductionStatus required
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * AQUATIC SPECIES
+ * ============================================================
+ */
+
+entity AquaticSpecies {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  freshwater Boolean
+  saltwater Boolean
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * AQUACULTURE ACTIVITY
+ * ============================================================
+ */
+
+entity AquacultureActivity {
+  name String required
+  description TextBlob
+  productionMode AquacultureProductionMode
+  ownershipType AquacultureOwnershipType
+  productionType AquacultureProductionType
+  systemType AquacultureSystemType
+  startDate LocalDate
+  totalArea BigDecimal
+  areaUnit String
+  waterSource String
+  numberOfProductionUnits Integer
+  productionUnitDescription String
+  status AquacultureStatus required
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  employees Integer
+  certification String
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * AQUACULTURE PRODUCTION
+ * ============================================================
+ */
+
+entity AquacultureProduction {
+  productionDate LocalDate
+  numberOfAnimals Integer
+  stockingDensity BigDecimal
+  productionQuantity BigDecimal
+  productionUnit String
+  averageWeightGrams BigDecimal
+  mortalityCount Integer
+  stockingCount Integer
+  harvestedCount Integer
+  expectedProduction BigDecimal
+  expectedHarvestDate LocalDate
+  actualHarvestDate LocalDate
+  status AquacultureProductionStatus required
+  notes TextBlob
+}
+
+
+/*
+ * ============================================================
+ * APP USER
+ * ============================================================
+ */
+
+entity AppUser {
+  employeeNumber String unique
+  firstName String
+  lastName String
+  phoneNumber String
+  jobTitle String
+  department String
+  status AppUserStatus required
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+
+
+/*
+ * ============================================================
+ * COOPERATIVE ROLE
+ * ============================================================
+ */
+
+entity CooperativeRole {
+  code String required unique
+  name String required
+  description TextBlob
+  status CooperativeRoleStatus required
+}
+
+
+/*
+ * ============================================================
+ * COOPERATIVE USER
+ * ============================================================
+ */
+
+entity CooperativeUser {
+  startDate LocalDate required
+  endDate LocalDate
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * BRANCH USER
+ * ============================================================
+ */
+
+entity BranchUser {
+  startDate LocalDate required
+  endDate LocalDate
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * PERMISSION
+ * ============================================================
+ */
+
+entity Permission {
+  code String required unique
+  name String required
+  description TextBlob
+  resource String
+  action String
+  active Boolean required
+}
+
+
+/*
+ * ============================================================
+ * AUDIT LOG
+ * ============================================================
+ */
+
+entity AuditLog {
+  action AuditAction required
+  entityName String required
+  entityId String
+  username String
+  cooperativeId Long
+  branchId Long
+  timestamp Instant required
+  ipAddress String
+  userAgent String
+  oldValue TextBlob
+  newValue TextBlob
+  description TextBlob
+}
+
+
+/*
+ * ============================================================
+ * NUMBER SEQUENCE
+ * ============================================================
+ */
+
+entity NumberSequence {
+  sequenceType SequenceType required
+  prefix String
+  year Integer
+  currentValue Long required
+  padding Integer required
+}
+
+
+/*
+ * ============================================================
+ * RELATIONSHIPS
+ * ============================================================
+ */
+
+
+/*
+ * Cooperative -> Branch
+ */
+relationship ManyToOne {
+  CooperativeBranch{cooperative(name)} to Cooperative
+}
+
+
+/*
+ * Branch -> Location
+ */
+relationship ManyToOne {
+  CooperativeBranch{location(name)} to Location
+}
+
+
+/*
+ * Location hierarchy
+ */
+relationship ManyToOne {
+  Location{parent(name)} to Location
+}
+
+
+/*
+ * Cooperative -> Member
+ */
+relationship ManyToOne {
+  Member{cooperative(name)} to Cooperative
+}
+
+
+/*
+ * Branch -> Member
+ */
+relationship ManyToOne {
+  Member{branch(name)} to CooperativeBranch
+}
+
+
+/*
+ * Member -> IndividualMember
+ */
+relationship OneToOne {
+  Member{individualMember} to IndividualMember{member}
+}
+
+
+/*
+ * Member -> OrganizationMember
+ */
+relationship OneToOne {
+  Member{organizationMember} to OrganizationMember{member}
+}
+
+
+/*
+ * Member -> SocialProfile
+ */
+relationship OneToOne {
+  Member{socialProfile} to SocialProfile{member}
+}
+
+
+/*
+ * Member -> ProfessionalProfile
+ */
+relationship OneToOne {
+  Member{professionalProfile} to ProfessionalProfile{member}
+}
+
+
+/*
+ * Member -> FamilyMember
+ */
+relationship ManyToOne {
+  FamilyMember{member(memberNumber)} to Member
+}
+
+
+/*
+ * Member -> IdentityDocument
+ */
+relationship ManyToOne {
+  IdentityDocument{member(memberNumber)} to Member
+}
+
+
+/*
+ * Member -> MemberDocument
+ */
+relationship ManyToOne {
+  MemberDocument{member(memberNumber)} to Member
+}
+
+
+/*
+ * MemberDocument -> AppUser
+ */
+relationship ManyToOne {
+  MemberDocument{uploadedBy} to AppUser
+}
+
+
+/*
+ * MembershipApplication -> Member
+ */
+relationship ManyToOne {
+  MembershipApplication{member(memberNumber)} to Member
+}
+
+
+/*
+ * MembershipApplication -> Cooperative
+ */
+relationship ManyToOne {
+  MembershipApplication{cooperative(name)} to Cooperative
+}
+
+
+/*
+ * MembershipApplication -> Branch
+ */
+relationship ManyToOne {
+  MembershipApplication{branch(name)} to CooperativeBranch
+}
+
+
+/*
+ * EconomicActivity -> Member
+ */
+relationship ManyToOne {
+  EconomicActivity{member(memberNumber)} to Member
+}
+
+
+/*
+ * EconomicActivity -> EconomicActivityType
+ */
+relationship ManyToOne {
+  EconomicActivity{activityType(name)} to EconomicActivityType
+}
+
+
+/*
+ * EconomicActivity -> Location
+ */
+relationship ManyToOne {
+  EconomicActivity{location(name)} to Location
+}
+
+
+/*
+ * ============================================================
+ * AGRICULTURE RELATIONSHIPS
+ * ============================================================
+ */
+
+
+/*
+ * EconomicActivity -> AgriculturalActivity
+ */
+relationship OneToOne {
+  EconomicActivity{agriculturalActivity}
+    to AgriculturalActivity{economicActivity}
+}
+
+
+/*
+ * AgriculturalActivity -> Location
+ */
+relationship ManyToOne {
+  AgriculturalActivity{location(name)} to Location
+}
+
+
+/*
+ * AgriculturalActivity -> AgriculturalProduction
+ */
+relationship ManyToOne {
+  AgriculturalProduction{agriculturalActivity}
+    to AgriculturalActivity{productions}
+}
+
+
+/*
+ * Crop -> CropVariety
+ */
+relationship ManyToOne {
+  CropVariety{crop(name)} to Crop
+}
+
+
+/*
+ * Crop -> AgriculturalProduction
+ */
+relationship ManyToOne {
+  AgriculturalProduction{crop(name)} to Crop
+}
+
+
+/*
+ * CropVariety -> AgriculturalProduction
+ */
+relationship ManyToOne {
+  AgriculturalProduction{cropVariety(name)} to CropVariety
+}
+
+
+/*
+ * ============================================================
+ * LIVESTOCK RELATIONSHIPS
+ * ============================================================
+ */
+
+
+/*
+ * EconomicActivity -> LivestockActivity
+ */
+relationship OneToOne {
+  EconomicActivity{livestockActivity}
+    to LivestockActivity{economicActivity}
+}
+
+
+/*
+ * LivestockActivity -> Location
+ */
+relationship ManyToOne {
+  LivestockActivity{location(name)} to Location
+}
+
+
+/*
+ * LivestockActivity -> LivestockType
+ */
+relationship ManyToOne {
+  LivestockActivity{livestockType(name)} to LivestockType
+}
+
+
+/*
+ * LivestockActivity -> LivestockProduction
+ */
+relationship ManyToOne {
+  LivestockProduction{livestockActivity}
+    to LivestockActivity{productions}
+}
+
+
+/*
+ * ============================================================
+ * AQUACULTURE RELATIONSHIPS
+ * ============================================================
+ */
+
+
+/*
+ * EconomicActivity -> AquacultureActivity
+ */
+relationship OneToOne {
+  EconomicActivity{aquacultureActivity}
+    to AquacultureActivity{economicActivity}
+}
+
+
+/*
+ * AquacultureActivity -> Location
+ */
+relationship ManyToOne {
+  AquacultureActivity{location(name)} to Location
+}
+
+
+/*
+ * AquacultureActivity -> AquaticSpecies
+ */
+relationship ManyToOne {
+  AquacultureActivity{aquaticSpecies(name)} to AquaticSpecies
+}
+
+
+/*
+ * AquacultureActivity -> AquacultureProduction
+ */
+relationship ManyToOne {
+  AquacultureProduction{aquacultureActivity}
+    to AquacultureActivity{productions}
+}
+
+
+/*
+ * ============================================================
+ * APPLICATION USER RELATIONSHIPS
+ * ============================================================
+ */
+
+
+/*
+ * JHipster User -> AppUser
+ */
+relationship OneToOne {
+  AppUser{user(login)} to User{appUser}  with builtInEntity
+}
+
+
+/*
+ * AppUser -> CooperativeUser
+ */
+relationship ManyToOne {
+  CooperativeUser{appUser} to AppUser
+}
+
+
+/*
+ * Cooperative -> CooperativeUser
+ */
+relationship ManyToOne {
+  CooperativeUser{cooperative(name)} to Cooperative
+}
+
+
+/*
+ * CooperativeRole -> CooperativeUser
+ */
+relationship ManyToOne {
+  CooperativeUser{role(name)} to CooperativeRole
+}
+
+
+/*
+ * AppUser -> BranchUser
+ */
+relationship ManyToOne {
+  BranchUser{appUser} to AppUser
+}
+
+
+/*
+ * Branch -> BranchUser
+ */
+relationship ManyToOne {
+  BranchUser{branch(name)} to CooperativeBranch
+}
+
+
+/*
+ * CooperativeRole -> BranchUser
+ */
+relationship ManyToOne {
+  BranchUser{role(name)} to CooperativeRole
+}
+
+
+/*
+ * ============================================================
+ * ROLE -> PERMISSIONS
+ * ============================================================
+ */
+
+relationship ManyToMany {
+  CooperativeRole{permissions(code)} to Permission{roles}
+}
+
+
+/*
+ * ============================================================
+ * AUDIT
+ * ============================================================
+ */
+
+relationship ManyToOne {
+  AuditLog{appUser} to AppUser
+}
+
+
+/*
+ * ============================================================
+ * NUMBER SEQUENCE
+ * ============================================================
+ */
+
+relationship ManyToOne {
+  NumberSequence{cooperative(name)} to Cooperative
+}
+
+
+/*
+ * ============================================================
+ * JHIPSTER OPTIONS
+ * ============================================================
+ */
+
+dto * with mapstruct
+
+service * with serviceClass
+
+filter *
