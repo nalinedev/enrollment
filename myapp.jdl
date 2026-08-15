@@ -1,0 +1,698 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName coopfull
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework react
+    clientTheme none
+    creationTimestamp 1786816059661
+    databaseType sql
+    devDatabaseType h2Disk
+    enableHibernateCache true
+    enableTranslation true
+    jhipsterVersion "9.2.0"
+    jwtSecretKey "ZDUyYWVkNDc1OWEyZGJiZmY5YTIzNzRhNTE0ODRjNWU2YjU0MjJhOTYxMDRlZWVlYWVhMWIyMzM1YmQxMGM3N2MwYzkyZjkxODlkZjhmMTM2MThiODgzYTNiZWFjZDlmNGI4MGJhOWNiNzFmNmFhM2EwYWRjMDU5MzdjMDM5MTk="
+    languages [en, fr]
+    microfrontends []
+    nativeLanguage en
+    packageName com.naline.coopfull
+    prodDatabaseType postgresql
+    reactive false
+    testFrameworks [gatling, cucumber, cypress]
+    withAdminUi true
+  }
+
+  entities AgriculturalActivity, AgriculturalProduction, AppUser, AquacultureActivity, AquacultureProduction, AquaticSpecies, AuditLog, BranchUser, Cooperative, CooperativeBranch, CooperativeRole, CooperativeUser, Crop, CropVariety, EconomicActivity, EconomicActivityType, FamilyMember, IdentityDocument, IndividualMember, LivestockActivity, LivestockProduction, LivestockType, Location, Member, MemberDocument, MembershipApplication, NumberSequence, OrganizationMember, Permission, ProfessionalProfile, SocialProfile
+}
+
+@ChangelogDate("20260815175947")
+entity AgriculturalActivity {
+  totalArea BigDecimal required
+  areaUnit String required
+  exploitationMode AgriculturalExploitationMode
+  ownershipType LandOwnershipType
+  startDate LocalDate
+  irrigationAvailable Boolean
+  organicProduction Boolean
+  certification String
+  description TextBlob
+}
+@ChangelogDate("20260815175950")
+entity AgriculturalProduction {
+  area BigDecimal required
+  areaUnit String required
+  plantingDate LocalDate
+  harvestStartDate LocalDate
+  harvestEndDate LocalDate
+  productionQuantity BigDecimal
+  productionUnit String
+  expectedAnnualProduction BigDecimal
+  numberOfPlants Integer
+  plantingDensity BigDecimal
+  productionYear Integer
+  status ProductionStatus required
+  notes TextBlob
+}
+@ChangelogDate("20260815175957")
+entity AppUser {
+  employeeNumber String unique
+  firstName String
+  lastName String
+  phoneNumber String
+  jobTitle String
+  department String
+  status AppUserStatus required
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+@ChangelogDate("20260815175955")
+entity AquacultureActivity {
+  name String required
+  description TextBlob
+  productionMode AquacultureProductionMode
+  ownershipType AquacultureOwnershipType
+  productionType AquacultureProductionType
+  systemType AquacultureSystemType
+  startDate LocalDate
+  totalArea BigDecimal
+  areaUnit String
+  waterSource String
+  numberOfProductionUnits Integer
+  productionUnitDescription String
+  status AquacultureStatus required
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  employees Integer
+  certification String
+  notes TextBlob
+}
+@ChangelogDate("20260815175956")
+entity AquacultureProduction {
+  productionDate LocalDate
+  numberOfAnimals Integer
+  stockingDensity BigDecimal
+  productionQuantity BigDecimal
+  productionUnit String
+  averageWeightGrams BigDecimal
+  mortalityCount Integer
+  stockingCount Integer
+  harvestedCount Integer
+  expectedProduction BigDecimal
+  expectedHarvestDate LocalDate
+  actualHarvestDate LocalDate
+  status AquacultureProductionStatus required
+  notes TextBlob
+}
+@ChangelogDate("20260815175954")
+entity AquaticSpecies {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  freshwater Boolean
+  saltwater Boolean
+  active Boolean required
+}
+@ChangelogDate("20260815180002")
+entity AuditLog {
+  action AuditAction required
+  entityName String required
+  entityId String
+  username String
+  cooperativeId Long
+  branchId Long
+  timestamp Instant required
+  ipAddress String
+  userAgent String
+  oldValue TextBlob
+  newValue TextBlob
+  description TextBlob
+}
+@ChangelogDate("20260815180000")
+entity BranchUser {
+  startDate LocalDate required
+  endDate LocalDate
+  active Boolean required
+}
+@ChangelogDate("20260815175933")
+entity Cooperative {
+  code String required unique
+  name String required
+  legalName String
+  registrationNumber String
+  taxNumber String
+  description TextBlob
+  status CooperativeStatus required
+  foundedDate LocalDate
+  email String
+  phone String
+  website String
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+@ChangelogDate("20260815175935")
+entity CooperativeBranch {
+  code String required
+  name String required
+  description String
+  phone String
+  email String
+  status CooperativeStatus required
+  openingDate LocalDate
+  closingDate LocalDate
+}
+@ChangelogDate("20260815175958")
+entity CooperativeRole {
+  code String required unique
+  name String required
+  description TextBlob
+  status CooperativeRoleStatus required
+}
+@ChangelogDate("20260815175959")
+entity CooperativeUser {
+  startDate LocalDate required
+  endDate LocalDate
+  active Boolean required
+}
+@ChangelogDate("20260815175948")
+entity Crop {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  perennial Boolean
+  active Boolean required
+}
+@ChangelogDate("20260815175949")
+entity CropVariety {
+  code String required unique
+  name String required
+  description TextBlob
+  origin String
+  maturityDays Integer
+  yieldPotential BigDecimal
+  diseaseResistance String
+  active Boolean required
+}
+@ChangelogDate("20260815175946")
+entity EconomicActivity {
+  name String required
+  description TextBlob
+  mainActivity Boolean required
+  startDate LocalDate
+  endDate LocalDate
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  numberOfEmployees Integer
+  status EconomicActivityStatus required
+  notes TextBlob
+}
+@ChangelogDate("20260815175945")
+entity EconomicActivityType {
+  code String required unique
+  name String required
+  description TextBlob
+  sector String
+  active Boolean required
+}
+@ChangelogDate("20260815175941")
+entity FamilyMember {
+  firstName String required
+  middleName String
+  lastName String required
+  relationship String required
+  gender String
+  birthDate LocalDate
+  birthPlace String
+  nationality String
+  phoneNumber String
+  occupation String
+  dependent Boolean
+  notes TextBlob
+}
+@ChangelogDate("20260815175943")
+entity IdentityDocument {
+  documentType String required
+  documentNumber String required
+  issueDate LocalDate
+  expiryDate LocalDate
+  issuingAuthority String
+  issuingCountry String
+  status DocumentStatus required
+  verified Boolean required
+  verificationDate Instant
+  verificationComment String
+}
+@ChangelogDate("20260815175937")
+entity IndividualMember {
+  firstName String required
+  middleName String
+  lastName String required
+  maidenName String
+  gender String
+  birthDate LocalDate
+  birthPlace String
+  nationality String
+  email String
+  phoneNumber String
+  occupation String
+}
+@ChangelogDate("20260815175952")
+entity LivestockActivity {
+  name String required
+  description TextBlob
+  productionMode LivestockProductionMode
+  ownershipType LivestockOwnershipType
+  productionType LivestockProductionType
+  startDate LocalDate
+  totalArea BigDecimal
+  areaUnit String
+  status LivestockStatus required
+  numberOfAnimals Integer
+  annualRevenue BigDecimal
+  monthlyRevenue BigDecimal
+  employees Integer
+  veterinaryServiceAvailable Boolean
+  feedSource String
+  waterSource String
+  certification String
+  notes TextBlob
+}
+@ChangelogDate("20260815175953")
+entity LivestockProduction {
+  productionDate LocalDate
+  animalSex AnimalSex
+  numberOfAnimals Integer required
+  averageAgeMonths Integer
+  averageWeightKg BigDecimal
+  productionQuantity BigDecimal
+  productionUnit String
+  mortalityCount Integer
+  birthCount Integer
+  soldCount Integer
+  status AnimalProductionStatus required
+  notes TextBlob
+}
+@ChangelogDate("20260815175951")
+entity LivestockType {
+  code String required unique
+  name String required
+  scientificName String
+  category String
+  description TextBlob
+  active Boolean required
+}
+@ChangelogDate("20260815175934")
+entity Location {
+  code String required
+  name String required
+  type LocationType required
+  addressLine1 String
+  addressLine2 String
+  postalCode String
+  latitude BigDecimal
+  longitude BigDecimal
+  description String
+}
+@ChangelogDate("20260815175936")
+entity Member {
+  memberNumber String required unique
+  memberType MemberType required
+  status MemberStatus required
+  admissionDate LocalDate
+  exitDate LocalDate
+  exitReason String
+  notes TextBlob
+  createdDate Instant required
+  lastModifiedDate Instant
+}
+@ChangelogDate("20260815175944")
+entity MemberDocument {
+  documentType MemberDocumentType required
+  originalFileName String
+  storedFileName String
+  contentType String
+  fileSize Long
+  storagePath String
+  checksum String
+  verificationStatus DocumentVerificationStatus required
+  uploadedAt Instant required
+  verifiedAt Instant
+  notes TextBlob
+}
+@ChangelogDate("20260815175939")
+entity MembershipApplication {
+  applicationNumber String required unique
+  status MembershipApplicationStatus required
+  applicationDate LocalDate required
+  submittedAt Instant
+  reviewedAt Instant
+  approvedAt Instant
+  rejectedAt Instant
+  rejectionReason TextBlob
+  reviewComments TextBlob
+  confirmation Boolean required
+  notes TextBlob
+}
+@ChangelogDate("20260815180003")
+entity NumberSequence {
+  sequenceType SequenceType required
+  prefix String
+  year Integer
+  currentValue Long required
+  padding Integer required
+}
+@ChangelogDate("20260815175938")
+entity OrganizationMember {
+  legalName String required
+  tradeName String
+  registrationNumber String
+  taxNumber String
+  legalForm String
+  registrationDate LocalDate
+  email String
+  phoneNumber String
+  website String
+  description TextBlob
+}
+@ChangelogDate("20260815180001")
+entity Permission {
+  code String required unique
+  name String required
+  description TextBlob
+  resource String
+  action String
+  active Boolean required
+}
+@ChangelogDate("20260815175942")
+entity ProfessionalProfile {
+  employmentStatus String
+  employerName String
+  jobTitle String
+  profession String
+  sector String
+  yearsOfExperience Integer
+  monthlyIncome BigDecimal
+  annualIncome BigDecimal
+  employmentStartDate LocalDate
+  employerLocation String
+  notes TextBlob
+}
+@ChangelogDate("20260815175940")
+entity SocialProfile {
+  maritalStatus MaritalStatus
+  numberOfChildren Integer
+  numberOfDependents Integer
+  educationLevel String
+  housingStatus String
+  residenceSince LocalDate
+  disabilityStatus Boolean
+  disabilityDescription TextBlob
+  socialCategory String
+  notes TextBlob
+}
+
+enum AgriculturalExploitationMode {
+  FAMILY,
+  INDIVIDUAL,
+  COOPERATIVE,
+  COMMERCIAL,
+  CONTRACTUAL,
+  OTHER
+}
+enum LandOwnershipType {
+  OWNER,
+  LEASED,
+  FAMILY_LAND,
+  COMMUNITY_LAND,
+  BORROWED,
+  OCCUPIED,
+  OTHER
+}
+enum ProductionStatus {
+  PLANNED,
+  ACTIVE,
+  HARVESTED,
+  COMPLETED,
+  ABANDONED
+}
+enum AppUserStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  LOCKED
+}
+enum AquacultureProductionMode {
+  FAMILY,
+  INDIVIDUAL,
+  COMMERCIAL,
+  COOPERATIVE,
+  CONTRACTUAL,
+  OTHER
+}
+enum AquacultureOwnershipType {
+  OWNER,
+  LEASED,
+  SHARED,
+  COMMUNITY,
+  OTHER
+}
+enum AquacultureProductionType {
+  FOOD,
+  BREEDING,
+  FINGERLINGS,
+  ORNAMENTAL,
+  COMMERCIAL,
+  MULTIPURPOSE,
+  OTHER
+}
+enum AquacultureSystemType {
+  POND,
+  TANK,
+  CAGE,
+  RACEWAY,
+  RECIRCULATING,
+  EARTHEN_POND,
+  CONCRETE_POND,
+  OTHER
+}
+enum AquacultureStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+enum AquacultureProductionStatus {
+  PLANNED,
+  ACTIVE,
+  HARVESTED,
+  COMPLETED,
+  ABANDONED
+}
+enum AuditAction {
+  CREATE,
+  UPDATE,
+  DELETE,
+  VIEW,
+  APPROVE,
+  REJECT,
+  SUBMIT,
+  LOGIN,
+  LOGOUT,
+  VERIFY,
+  EXPORT,
+  OTHER
+}
+enum CooperativeStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+enum CooperativeRoleStatus {
+  ACTIVE,
+  INACTIVE
+}
+enum EconomicActivityStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+enum DocumentStatus {
+  VALID,
+  EXPIRED,
+  LOST,
+  STOLEN,
+  CANCELLED,
+  PENDING_VERIFICATION
+}
+enum LivestockProductionMode {
+  FAMILY,
+  INDIVIDUAL,
+  COMMERCIAL,
+  COOPERATIVE,
+  CONTRACTUAL,
+  OTHER
+}
+enum LivestockOwnershipType {
+  OWNER,
+  LEASED,
+  SHARED,
+  COMMUNITY,
+  OTHER
+}
+enum LivestockProductionType {
+  MEAT,
+  MILK,
+  EGGS,
+  BREEDING,
+  HONEY,
+  SKINS,
+  WOOL,
+  MULTIPURPOSE,
+  OTHER
+}
+enum LivestockStatus {
+  ACTIVE,
+  INACTIVE,
+  SUSPENDED,
+  CLOSED
+}
+enum AnimalSex {
+  MALE,
+  FEMALE,
+  MIXED
+}
+enum AnimalProductionStatus {
+  ACTIVE,
+  SOLD,
+  SLAUGHTERED,
+  DEAD,
+  TRANSFERRED,
+  OTHER
+}
+enum LocationType {
+  COUNTRY,
+  REGION,
+  DEPARTMENT,
+  DISTRICT,
+  CITY,
+  TOWN,
+  VILLAGE,
+  QUARTER,
+  ADDRESS,
+  OTHER
+}
+enum MemberType {
+  INDIVIDUAL,
+  ORGANIZATION
+}
+enum MemberStatus {
+  PENDING,
+  ACTIVE,
+  SUSPENDED,
+  INACTIVE,
+  DECEASED,
+  CLOSED
+}
+enum MemberDocumentType {
+  IDENTITY_CARD,
+  PASSPORT,
+  DRIVERS_LICENSE,
+  BIRTH_CERTIFICATE,
+  MARRIAGE_CERTIFICATE,
+  TAX_DOCUMENT,
+  BUSINESS_REGISTRATION,
+  LAND_DOCUMENT,
+  MEMBERSHIP_FORM,
+  PHOTO,
+  OTHER
+}
+enum DocumentVerificationStatus {
+  PENDING,
+  VERIFIED,
+  REJECTED
+}
+enum MembershipApplicationStatus {
+  DRAFT,
+  SUBMITTED,
+  UNDER_REVIEW,
+  NEEDS_CORRECTION,
+  APPROVED,
+  REJECTED,
+  CANCELLED
+}
+enum SequenceType {
+  MEMBER,
+  APPLICATION,
+  DOCUMENT
+}
+enum MaritalStatus {
+  SINGLE,
+  MARRIED,
+  DIVORCED,
+  WIDOWED,
+  SEPARATED,
+  OTHER,
+  UNKNOWN
+}
+
+relationship OneToOne {
+  AppUser{user(login)} to User with builtInEntity
+  EconomicActivity{agriculturalActivity} to AgriculturalActivity{economicActivity}
+  EconomicActivity{livestockActivity} to LivestockActivity{economicActivity}
+  EconomicActivity{aquacultureActivity} to AquacultureActivity{economicActivity}
+  Member{individualMember} to IndividualMember{member}
+  Member{organizationMember} to OrganizationMember{member}
+  Member{socialProfile} to SocialProfile{member}
+  Member{professionalProfile} to ProfessionalProfile{member}
+}
+relationship ManyToOne {
+  AgriculturalActivity{location(name)} to Location
+  AgriculturalProduction{agriculturalActivity} to AgriculturalActivity{productions}
+  AgriculturalProduction{crop(name)} to Crop
+  AgriculturalProduction{cropVariety(name)} to CropVariety
+  AquacultureActivity{location(name)} to Location
+  AquacultureActivity{aquaticSpecies(name)} to AquaticSpecies
+  AquacultureProduction{aquacultureActivity} to AquacultureActivity{productions}
+  AuditLog{appUser} to AppUser
+  BranchUser{appUser} to AppUser
+  BranchUser{branch(name)} to CooperativeBranch
+  BranchUser{role(name)} to CooperativeRole
+  CooperativeBranch{cooperative(name)} to Cooperative
+  CooperativeBranch{location(name)} to Location
+  CooperativeUser{appUser} to AppUser
+  CooperativeUser{cooperative(name)} to Cooperative
+  CooperativeUser{role(name)} to CooperativeRole
+  CropVariety{crop(name)} to Crop
+  EconomicActivity{member(memberNumber)} to Member
+  EconomicActivity{activityType(name)} to EconomicActivityType
+  EconomicActivity{location(name)} to Location
+  FamilyMember{member(memberNumber)} to Member
+  IdentityDocument{member(memberNumber)} to Member
+  LivestockActivity{location(name)} to Location
+  LivestockActivity{livestockType(name)} to LivestockType
+  LivestockProduction{livestockActivity} to LivestockActivity{productions}
+  Location{parent(name)} to Location
+  Member{cooperative(name)} to Cooperative
+  Member{branch(name)} to CooperativeBranch
+  MemberDocument{member(memberNumber)} to Member
+  MemberDocument{uploadedBy} to AppUser
+  MembershipApplication{member(memberNumber)} to Member
+  MembershipApplication{cooperative(name)} to Cooperative
+  MembershipApplication{branch(name)} to CooperativeBranch
+  NumberSequence{cooperative(name)} to Cooperative
+}
+relationship ManyToMany {
+  CooperativeRole{permissions(code)} to Permission{roles}
+}
+
+dto AgriculturalActivity, AgriculturalProduction, AppUser, AquacultureActivity, AquacultureProduction, AquaticSpecies, AuditLog, BranchUser, Cooperative, CooperativeBranch, CooperativeRole, CooperativeUser, Crop, CropVariety, EconomicActivity, EconomicActivityType, FamilyMember, IdentityDocument, IndividualMember, LivestockActivity, LivestockProduction, LivestockType, Location, Member, MemberDocument, MembershipApplication, NumberSequence, OrganizationMember, Permission, ProfessionalProfile, SocialProfile with mapstruct
+service AgriculturalActivity, AgriculturalProduction, AppUser, AquacultureActivity, AquacultureProduction, AquaticSpecies, AuditLog, BranchUser, Cooperative, CooperativeBranch, CooperativeRole, CooperativeUser, Crop, CropVariety, EconomicActivity, EconomicActivityType, FamilyMember, IdentityDocument, IndividualMember, LivestockActivity, LivestockProduction, LivestockType, Location, Member, MemberDocument, MembershipApplication, NumberSequence, OrganizationMember, Permission, ProfessionalProfile, SocialProfile with serviceClass
+search AgriculturalActivity, AgriculturalProduction, AppUser, AquacultureActivity, AquacultureProduction, AquaticSpecies, AuditLog, BranchUser, Cooperative, CooperativeBranch, CooperativeRole, CooperativeUser, Crop, CropVariety, EconomicActivity, EconomicActivityType, FamilyMember, IdentityDocument, IndividualMember, LivestockActivity, LivestockProduction, LivestockType, Location, Member, MemberDocument, MembershipApplication, NumberSequence, OrganizationMember, Permission, ProfessionalProfile, SocialProfile with no
+filter AgriculturalActivity, AgriculturalProduction, AppUser, AquacultureActivity, AquacultureProduction, AquaticSpecies, AuditLog, BranchUser, Cooperative, CooperativeBranch, CooperativeRole, CooperativeUser, Crop, CropVariety, EconomicActivity, EconomicActivityType, FamilyMember, IdentityDocument, IndividualMember, LivestockActivity, LivestockProduction, LivestockType, Location, Member, MemberDocument, MembershipApplication, NumberSequence, OrganizationMember, Permission, ProfessionalProfile, SocialProfile
