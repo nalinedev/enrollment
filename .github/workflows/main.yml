@@ -38,27 +38,27 @@ jobs:
       #    ./mvnw -ntp jib:build -Djib.to.image=jhipster/coopfull${DOCKER_TAG} -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
       - name: Build and publish GHCR Docker image
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
-        env:
-          REGISTRY: ghcr.io
-          IMAGE_NAME: ${{ github.repository }}
-          USERNAME: ${{ github.actor }}
-          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
-              IMAGE_TAG="${GITHUB_REF#refs/tags/}"
-            else
-              IMAGE_TAG="latest"
-            fi
+          env:
+            REGISTRY: ghcr.io
+            IMAGE_NAME: ${{ github.repository }}
+            USERNAME: ${{ github.actor }}
+            PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            IMAGE_TAG="${GITHUB_REF#refs/tags/}"
+          else
+            IMAGE_TAG="latest"
+          fi
 
-            IMAGE="${REGISTRY}/${IMAGE_NAME}"
+          IMAGE="${REGISTRY}/${IMAGE_NAME}"
 
-            echo "Building and publishing: ${IMAGE}:${IMAGE_TAG}"
+          echo "Building and publishing: ${IMAGE}:${IMAGE_TAG}"
 
-            ./mvnw -ntp jib:build \
-              -Djib.to.image="${IMAGE}:${IMAGE_TAG}" \
-              -Djib.to.auth.username="${USERNAME}" \
-              -Djib.to.auth.password="${PASSWORD}" \
-              -Pprod
+          ./mvnw -ntp jib:build \
+          -Djib.to.image="${IMAGE}:${IMAGE_TAG}" \
+          -Djib.to.auth.username="${USERNAME}" \
+          -Djib.to.auth.password="${PASSWORD}" \
+          -Pprod
       - name: 'E2E: Package'
         run: npm run ci:e2e:package
       - name: 'E2E: Prepare'
