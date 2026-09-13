@@ -129,7 +129,7 @@ jobs:
             docker run -d \
               --name "$CONTAINER" \
               --restart unless-stopped \
-              -p 8080:8099 \
+              -p 8099:8099 \
               "$IMAGE"
 
             echo "Removing unused Docker images..."
