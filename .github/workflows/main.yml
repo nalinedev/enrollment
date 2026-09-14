@@ -129,8 +129,8 @@ jobs:
             echo "======================================"
 
             cd /opt/naline/coopfull
-            echo "Stop previous image..."
-            docker-compose down || true
+            #echo "Stop previous image..."
+            #docker-compose down || true
             echo "Pulling latest image..."
             docker-compose pull coopfull
 
