@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.VPS_NALINE_USER }}
           key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
           port: ${{ secrets.VPS_NALINE_SSH_PORT }}
-          source: "target/*.jar,docker-compose.yml,Dockerfile"
+          source: "target/*.jar,docker-compose.yml"
           target: /opt/naline/coopfull
           strip_components: 0
 
@@ -110,8 +110,10 @@ jobs:
 
       - name: 'E2E: Teardown'
         run: npm run ci:e2e:teardown
+        
+      
 
-      - name: Deploy Docker image to VPS
+      - name: Deploy with Docker Compose
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.VPS_NALINE_IP }}
@@ -123,33 +125,25 @@ jobs:
             set -e
 
             echo "======================================"
-            echo "Deploying coopfull"
+            echo "Starting coopfull deployment"
             echo "======================================"
 
-            IMAGE="ghcr.io/nalinedev/enrollment:latest"
-            CONTAINER="coopfull"
+            cd /opt/naline/coopfull
 
-            echo "Pulling Docker image..."
-            docker pull "$IMAGE"
+            echo "Pulling latest image..."
+            docker compose pull coopfull
 
-            echo "Stopping existing container..."
-            docker stop "$CONTAINER" 2>/dev/null || true
+            echo "Restarting application..."
+            docker compose up -d
 
-            echo "Removing existing container..."
-            docker rm "$CONTAINER" 2>/dev/null || true
-
-            echo "Starting new container..."
-            docker run -d \
-              --name "$CONTAINER" \
-              --restart unless-stopped \
-              -p 8099:8099 \
-              "$IMAGE"
-
-            echo "Removing unused Docker images..."
+            echo "Cleaning unused Docker images..."
             docker image prune -f
+
+            echo "Container status:"
+            docker compose ps
 
             echo "======================================"
             echo "Deployment completed"
             echo "======================================"
 
-            docker ps --filter "name=$CONTAINER"
+      
