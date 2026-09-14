@@ -129,18 +129,19 @@ jobs:
             echo "======================================"
 
             cd /opt/naline/coopfull
-
+            echo "Stop previous image..."
+            docker-compose down || true
             echo "Pulling latest image..."
-            docker compose pull coopfull
+            docker-compose pull coopfull
 
             echo "Restarting application..."
-            docker compose up -d
+            docker-compose up -d
 
             echo "Cleaning unused Docker images..."
             docker image prune -f
 
             echo "Container status:"
-            docker compose ps
+            docker ps
 
             echo "======================================"
             echo "Deployment completed"
