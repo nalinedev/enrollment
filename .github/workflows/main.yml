@@ -44,6 +44,19 @@ jobs:
 
       - name: Package application
         run: npm run java:jar:prod
+      
+      
+
+      - name: Copy Package application files via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_NALINE_IP }}
+          username: ${{ secrets.VPS_NALINE_USER }}
+          key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
+          port: ${{ secrets.VPS_NALINE_SSH_PORT }}
+          source: "target/*.jar,docker-compose.yml,Dockerfile"
+          target: /opt/naline/coopfull
+          strip_components: 0
 
       # - name: Build and publish docker image
       #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
