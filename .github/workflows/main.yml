@@ -212,13 +212,20 @@ jobs:
               --username "$GHCR_USERNAME" \
               --password-stdin
 
-            echo "Pulling latest CoopFull image..."
+            #echo "Pulling latest CoopFull image..."
 
-            docker compose pull coopfull
-
+            #docker compose pull coopfull
+            
+            echo "Pulling latest Compose image..."
+            docker compose pull
+            
             echo "Starting application..."
+            
+            docker compose up -d --force-recreate
 
-            docker compose up -d --remove-orphans
+            #echo "Starting application..."
+
+            #docker compose up -d --remove-orphans
 
             echo "Waiting for application..."
 

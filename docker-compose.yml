@@ -2,7 +2,6 @@ version: '3.8'
 services:
   coopfull:
     image: ghcr.io/nalinedev/enrollment:latest
-    container_name: coopfull
     restart: unless-stopped
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
