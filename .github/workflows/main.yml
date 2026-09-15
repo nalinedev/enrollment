@@ -47,17 +47,6 @@ jobs:
       
       
 
-      - name: Copy Package application files via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_NALINE_IP }}
-          username: ${{ secrets.VPS_NALINE_USER }}
-          key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
-          port: ${{ secrets.VPS_NALINE_SSH_PORT }}
-          source: "target/*.jar,docker-compose.yml"
-          target: /opt/naline/coopfull
-          strip_components: 0
-
       # - name: Build and publish docker image
       #   if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
       #   run: |
@@ -112,39 +101,78 @@ jobs:
         run: npm run ci:e2e:teardown
         
       
+        
+        
+        
+      
 
-      - name: Deploy with Docker Compose
-        uses: appleboy/ssh-action@v1.2.2
-        with:
-          host: ${{ secrets.VPS_NALINE_IP }}
-          username: ${{ secrets.VPS_NALINE_USER }}
-          key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
-          port: ${{ secrets.VPS_NALINE_SSH_PORT }}
+      - name: Copy Docker Compose file to VPS
+          uses: appleboy/scp-action@v0.1.7
+          with:
+            host: ${{ secrets.VPS_NALINE_IP }}
+            username: ${{ secrets.VPS_NALINE_USER }}
+            key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
+            port: ${{ secrets.VPS_NALINE_SSH_PORT }}
+            source: "docker-compose.yml"
+            target: "/opt/naline/coopfull"
 
-          script: |
-            set -e
+        - name: Deploy application to VPS
+          uses: appleboy/ssh-action@v1.2.2
+          env:
+            GHCR_USERNAME: ${{ github.actor }}
+            GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            host: ${{ secrets.VPS_NALINE_IP }}
+            username: ${{ secrets.VPS_NALINE_USER }}
+            key: ${{ secrets.SSH_NALINE_PRIVATE_KEY }}
+            port: ${{ secrets.VPS_NALINE_SSH_PORT }}
+            envs: GHCR_USERNAME,GHCR_TOKEN
+            script: |
+              set -e
 
-            echo "======================================"
-            echo "Starting coopfull deployment"
-            echo "======================================"
+              APP_DIR="/opt/naline/coopfull"
 
-            cd /opt/naline/coopfull
-            #echo "Stop previous image..."
-            #docker-compose down || true
-            echo "Pulling latest image..."
-            docker-compose pull coopfull
+              echo "======================================"
+              echo "Deploying CoopFull"
+              echo "======================================"
 
-            echo "Restarting application..."
-            docker-compose up -d
+              cd "$APP_DIR"
 
-            echo "Cleaning unused Docker images..."
-            docker image prune -f
+              echo "Logging into GitHub Container Registry..."
 
-            echo "Container status:"
-            docker ps
+              echo "$GHCR_TOKEN" | docker login ghcr.io \
+                --username "$GHCR_USERNAME" \
+                --password-stdin
 
-            echo "======================================"
-            echo "Deployment completed"
-            echo "======================================"
+              echo "Pulling latest CoopFull image..."
 
+              docker compose pull coopfull
+
+              echo "Starting application..."
+
+              docker compose up -d --remove-orphans
+
+              echo "Waiting for application..."
+
+              sleep 10
+
+              echo "Container status:"
+
+              docker compose ps
+
+              echo "Application health:"
+
+              docker inspect \
+                --format='{{.State.Health.Status}}' \
+                coopfull || true
+
+              echo "Recent application logs:"
+
+              docker compose logs --tail=100 coopfull
+
+              echo "Cleaning unused Docker images..."
+
+              docker image prune -f
+
+              echo "Deployment completed."
       
