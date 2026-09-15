@@ -191,7 +191,10 @@ jobs:
           script: |
             set -e
             
-            export DOCKER_CONFIG="$HOME/.docker-ghcr"
+            export DOCKER_CONFIG="$HOME/.docker"
+            #export DOCKER_CONFIG="$HOME/.docker-ghcr"
+            #export DOCKER_CONFIG=/home/naline/.docker
+            #export DOCKER_CONFIG=/home/naline/.docker
 
             mkdir -p "$DOCKER_CONFIG"
 
@@ -246,6 +249,10 @@ jobs:
             echo "======================================"
 
             docker image prune -f
+            
+            echo "Logging out from GHCR..." 
+            
+            docker logout ghcr.io
 
             echo "======================================"
             echo "Deployment completed"
