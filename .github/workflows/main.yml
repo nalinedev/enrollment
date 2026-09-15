@@ -190,6 +190,10 @@ jobs:
 
           script: |
             set -e
+            
+            export DOCKER_CONFIG="$HOME/.docker-ghcr"
+
+            mkdir -p "$DOCKER_CONFIG"
 
             APP_DIR="/opt/naline/coopfull"
 
