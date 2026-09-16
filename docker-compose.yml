@@ -1,44 +1,65 @@
 version: '3.8'
+name: coopfull
+
 services:
   coopfull:
     image: ghcr.io/nalinedev/enrollment:latest
+    container_name: coopfull
     restart: unless-stopped
-    environment:
-      - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs,secret-samples
-      - MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://coopfull-postgresql:5432/coopfull
-      - SPRING_DATASOURCE_USERNAME=coopfull
-      - SPRING_DATASOURCE_PASSWORD=
-      - SPRING_LIQUIBASE_URL=jdbc:postgresql://coopfull-postgresql:5432/coopfull
-    ports:
-      - 8180:8080
 
-    networks:
-      - coopfull-network
-    healthcheck:
-      test:
-        - CMD-SHELL
-        - "bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080; printf \"GET /management/health HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n\" >&3; grep -q \"\\\"status\\\":\\\"UP\\\"\" <&3'"
-      interval: 5s
-      timeout: 5s
-      retries: 40
     depends_on:
       coopfull-postgresql:
         condition: service_healthy
-  coopfull-postgresql:
-    image: postgres:18.4
+
     environment:
-      - POSTGRES_USER=coopfull
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      _JAVA_OPTIONS: '-Xmx512m -Xms256m'
+      SPRING_PROFILES_ACTIVE: 'prod,api-docs,secret-samples'
+
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://coopfull-postgresql:5432/coopfull'
+      SPRING_DATASOURCE_USERNAME: 'coopfull'
+      SPRING_DATASOURCE_PASSWORD: ''
+
+      SPRING_LIQUIBASE_URL: 'jdbc:postgresql://coopfull-postgresql:5432/coopfull'
+
+      MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED: 'true'
+
+    ports:
+      - '8180:8080'
+
+    networks:
+      - coopfull-network
+
     healthcheck:
       test:
         - CMD-SHELL
-        - pg_isready -U $${POSTGRES_USER}
-      interval: 5s
+        - >
+          bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080;
+          printf "GET /management/health HTTP/1.0\r\nHost: localhost\r\n\r\n" >&3;
+          grep -q "\"status\":\"UP\"" <&3'
       timeout: 5s
+      interval: 5s
+      retries: 40
+
+  coopfull-postgresql:
+    image: postgres:18.4
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: 'coopfull'
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - 'pg_isready -U $${POSTGRES_USER}'
+      timeout: 5s
+      interval: 5s
       retries: 10
+
+    networks:
+      - coopfull-network
 
 networks:
   coopfull-network:
+    name: coopfull_coopfull-network
     driver: bridge
